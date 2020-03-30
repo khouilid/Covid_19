@@ -1,0 +1,27 @@
+{
+  "name": "covid_19",
+  "version": "1.0.0",
+  "description": "site web can help you to test covir19",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss style/style.css -w",
+    "minify": "minify  style/style.css "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khouilid/Covid_19.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khouilid/Covid_19/issues"
+  },
+  "homepage": "https://github.com/khouilid/Covid_19#readme",
+  "devDependencies": {
+    "node-sass": "^4.13.1"
+  },
+  "dependencies": {
+    "minify": "^5.1.1",
+    "uglifycss": "0.0.29"
+  }
+}
