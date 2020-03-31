@@ -4,8 +4,7 @@
   "description": "site web can help you to test covir19",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass sass/main.scss style/style.css -w",
-    "minify": "minify  style/style.css "
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -18,10 +17,13 @@
   },
   "homepage": "https://github.com/khouilid/Covid_19#readme",
   "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-watch": "^5.0.1",
     "node-sass": "^4.13.1"
   },
   "dependencies": {
-    "minify": "^5.1.1",
-    "uglifycss": "0.0.29"
+    "gulp-uglifycss": "^1.1.0"
   }
 }
