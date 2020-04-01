@@ -1,13 +1,10 @@
 @import "../sass/variable.scss";
 @import "../sass/mixins.scss";
-
 body {
     height: 1000px;
     margin: 0;
     padding: 0;
-
     font-family: 'Cairo', sans-serif;
-    // padding-top: 100px;
 }
 
 // navbar
@@ -18,9 +15,7 @@ nav {
         z-index: 10;
         width: 100%;
         opacity: 1;
-
     }
-   
     .navbar {
         display: flex;
         justify-content: space-between;
@@ -56,12 +51,13 @@ nav {
                         color: $zra9;
                     }
                 }
+
                 a {
                     text-decoration: none;
                     font-size: $fontwiegth;
                     font-weight: 500;
                     color: black;
-                   
+                  
 
                     @media only screen and (max-width: 700px) {
                         font-size: $fontwiegth - 5px;
@@ -101,8 +97,7 @@ nav {
     }
 
 }
-
-// header
+// alert after the navbar
 header {
     position: relative;
     top: 110px;
@@ -126,83 +121,141 @@ header {
         }
     }
 }
+section{
+    // padding: 20px;
+    .protéger_title{
+        margin-top: 130px;
+        text-align: center;
+        color: $zra9;
+        font-size: 22px;
+        @media only screen and (max-width: 600px) {
+            font-size: 15px;
 
-.start {
-    display: flex;
-    padding: 20px;
-    align-items: center;
-
-    @media only screen and (max-width: 1000px) {
+        }
+    }
+    .protéger{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 80%;
         flex-wrap: wrap;
-
-    }
-
-    // flex-wrap: wrap;
-    margin-top: 150px;
-
-    .start_img img {
-        width: 98%;
-    }
-
-    .start_txt {
-
-        // margin-top: 50px;
-        div {
-            width: 86%;
-            margin-left: 30px;
-
-            h1 {
-                text-align: center;
-                font-weight: bold;
-                line-height: 50px;
-
-                @media only screen and (max-width: 1300px) {
-                    font-weight: 500;
-                    line-height: 40px;
-
-                }
-
-                @media only screen and (max-width: 600px) {
-                    font-weight: 400;
-                }
-
-            }
-
-            .start_txt_2 {
-                font-size: 1.8rem;
-
-                @media only screen and (max-width: 600px) {
-                    font-size: 1em;
-                }
-
-                h1 {
-                    color: $grey;
-                }
-
-            }
-
-            img {
-                margin: auto;
-                // text-align: center;
-                display: flex;
-                justify-content: center;
-            }
+        margin: 50px auto;
+        @media only screen and (max-width: 600px) {
+            flex-direction: column;
+            
 
         }
-
-        .start_txt_1 h1 {
-            font-size: 1.7rem;
+        div{
+            width: 26%;
+            margin: 20px;
+            padding: 10px;
+            text-align: center;
             color: $zra9;
-        }
+            @media only screen and (max-width: 600px) {
+                
+                width: 40%;
 
-        .stert_btn button {
-            @include btn(100%);
+            }
+            P{
+                font-size: large;
+            }
+           
+        }
+        .img{
+            img{
+                height: 110px;
+            }
+            p{
+                font-size: large;
+            }
+
+        } 
+    }
+    .last{
+        width: 25%;
+        margin: -20px auto;
+        text-align: center;
+    color: $zra9;
+        @media only screen and (max-width: 600px) {
+            
+            width: 70%;
+
+        }
+        p{
+            font-size: large;
+        }
+    }
+    
+}
+//information section
+section{
+    .information{
+        display: flex;
+        padding: 20px;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        background-color: $CHIBI;
+        margin-top: 50px;
+        @media only screen and (max-width: 800px) {
+            
+           flex-direction: column;
+           justify-content: center;
+
+
+        }
+       
+        .information_1{
+            width: 35%;
+            text-align: center;
+            h1{
+                font-size: 30px;
+                color: $zra9;
+            }
+            h3{
+                color: $zra9;
+            }
+        }
+        .information_2{
+            width: 29%;
+            text-align: center;
+            @media only screen and (max-width: 800px) {
+            
+                margin: 30px auto; 
+                width: 50%;
+            
+    
+            }
+            @media only screen and (max-width: 545px) {
+            
+                margin: 30px auto; 
+                width: 100%;
+            
+    
+            }
+            a{
+                text-decoration: none;
+                color: white;
+                padding: 20px;
+                border-radius: 8px;
+                background-color: $zra9;
+            
+             
+            }
+            p{
+                color: white;
+                padding: 20px;
+                width: 50%;
+                border-radius: 8px;
+                background-color: $zra9;
+                margin: auto;
+            }
         }
     }
 }
 
-.sympt {
-    margin-top: 30px;
+section{
+
 
     .sympt_title h1 {
         margin: auto;
@@ -238,8 +291,26 @@ header {
         text-align: center;
     }
 
+    // .sympt_A_2 {
+    //     margin-left: 40px;
+    // }
 }
-
+.sympt{
+    padding: 20px;
+    margin-top: 50px;
+    .sympto{
+        margin-top: 50px;
+        div{
+            // width: 70%;
+            text-align: center;
+            color: $zra9;
+            img{
+                // width:;
+                height: 120px;
+            }
+        }
+    }
+}
 .Recommandations {
     // display: flex;
     padding-left: 80px;
