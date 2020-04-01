@@ -146,6 +146,9 @@ section .information {
   section .information .information_1 {
     width: 35%;
     text-align: center; }
+    @media only screen and (max-width: 800px) {
+      section .information .information_1 {
+        width: 67%; } }
     section .information .information_1 h1 {
       font-size: 30px;
       color: #0f6894; }

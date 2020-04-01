@@ -208,6 +208,13 @@ section{
         .information_1{
             width: 35%;
             text-align: center;
+            @media only screen and (max-width: 800px) {
+            
+               
+                width: 67%;
+            
+    
+            }
             h1{
                 font-size: 30px;
                 color: $zra9;
