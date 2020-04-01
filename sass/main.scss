@@ -1,6 +1,7 @@
 @import "../sass/variable.scss";
+@import "../sass/mixins.scss";
 
-body{
+body {
     height: 1000px;
     margin: 0;
     padding: 0;
@@ -8,239 +9,478 @@ body{
     font-family: 'Cairo', sans-serif;
     // padding-top: 100px;
 }
+
 // navbar
-nav{
-    .navbar{
+nav {
+    .container{
+        background-image: url("../Assets/png/Merged\ bar-2.png");
+        position: fixed;
+        z-index: 10;
+        width: 100%;
+        opacity: 1;
+
+    }
+   
+    .navbar {
         display: flex;
         justify-content: space-between;
         padding: 10px;
         align-items: center;
-        position: fixed;
-        z-index: 10;
-        width: 100%;
         background-image: url("../Assets/png/Merged\ bar-1.png");
-        opacity: 1;
-        .navbar_menu{
+      
+
+        .navbar_menu {
             display: flex;
             align-items: center;
-            .navbar_link_1, .navbar_link_2{
-                margin-right: $fontwiegth  + 15px;
-                @media only screen  and (max-width: 700px ){
-                    margin-right: $fontwiegth  + 1px;
-                    
+
+            .navbar_link_1,
+            .navbar_link_2 {
+                margin-right: $fontwiegth + 15px;
+
+                @media only screen and (max-width: 700px) {
+                    margin-right: $fontwiegth + 1px;
+
                 }
-                @media only screen  and (max-width: 500px ){
+
+                @media only screen and (max-width: 500px) {
                     margin-right: $fontwiegth - 5px;
-                    
+
                 }
-                a{
+
+                a {
                     text-decoration: none;
                     font-size: $fontwiegth;
                     font-weight: 500;
                     color: black;
-                    @media only screen  and (max-width: 700px ){
+                    &:visited{
+                        color: $zra9;
+                    }
+
+                    @media only screen and (max-width: 700px) {
                         font-size: $fontwiegth - 5px;
-                        
+
                     }
-                    @media only screen  and (max-width: 500px ){
+
+                    @media only screen and (max-width: 500px) {
                         font-size: $fontwiegth - 10px;
-                        
+
                     }
                 }
-               
+
             }
-            .navbar_switch{
-                margin-right: $fontwiegth  + 35px;
-                @media only screen  and (max-width: 500px ){
+
+            .navbar_switch {
+                margin-right: $fontwiegth + 35px;
+
+                @media only screen and (max-width: 500px) {
                     margin-right: $fontwiegth;
-                    
+
                 }
-                @media only screen  and (max-width: 500px ){
+
+                @media only screen and (max-width: 500px) {
                     margin-right: $fontwiegth - 5px;
-                    
+
                 }
-                button{
-                    width: 80px;
-                    height: 30px;
-                    border: 2px solid $zra9;
-                    background: none;
-                    border-radius: 10px;
-                    font-weight: 500;
-                    font-family: 'Cairo', sans-serif;
+
+                button {
+                    @include LG-btn(80px, 30px);
+                    // font-family: 'Cairo', sans-serif;
                 }
             }
-    
-    
+
+
         }
-    
+
     }
 
 }
 
 // header
-header{
+header {
     position: relative;
     top: 110px;
-    div{
+
+    div {
         height: auto;
         padding: 20px;
         background-color: $sfar;
         margin: auto;
         text-align: center;
-        h3{
-            
+
+        h3 {
+
             margin: auto;
             text-align: center;
         }
-        p{
+
+        p {
             color: $zra9;
             margin: auto;
         }
     }
 }
-.start{
+
+.start {
     display: flex;
     padding: 20px;
     align-items: center;
-    @media only screen  and (max-width: 1000px ){
+
+    @media only screen and (max-width: 1000px) {
         flex-wrap: wrap;
-        
+
     }
+
     // flex-wrap: wrap;
     margin-top: 150px;
-    .start_img img{
+
+    .start_img img {
         width: 98%;
     }
-    .start_txt{
+
+    .start_txt {
+
         // margin-top: 50px;
-        div{
+        div {
             width: 86%;
             margin-left: 30px;
-            
-            h1{
+
+            h1 {
                 text-align: center;
                 font-weight: bold;
                 line-height: 50px;
-                @media only screen  and (max-width: 1300px ){
+
+                @media only screen and (max-width: 1300px) {
                     font-weight: 500;
                     line-height: 40px;
-                    
+
                 }
-                
+
+                @media only screen and (max-width: 600px) {
+                    font-weight: 400;
+                }
+
             }
-            .start_txt_2{
+
+            .start_txt_2 {
                 font-size: 1.8rem;
-                h1{
+
+                @media only screen and (max-width: 600px) {
+                    font-size: 1em;
+                }
+
+                h1 {
                     color: $grey;
                 }
 
             }
-            
-            img{
+
+            img {
                 margin: auto;
                 // text-align: center;
                 display: flex;
                 justify-content: center;
             }
-           
+
         }
-        .start_txt_1 h1{
+
+        .start_txt_1 h1 {
             font-size: 1.7rem;
             color: $zra9;
         }
-        .stert_btn button{
-            width: 100%;
-            height: 50px;
-            border: none;
-            border-radius: 10px;
-            background-color: $zra9;
-            color: white;
-            font-family: 'Cairo', sans-serif;
-            font-size: larger;
 
+        .stert_btn button {
+            @include btn(100%);
         }
     }
 }
-.sympt{
+
+.sympt {
     margin-top: 30px;
-    .sympt_title h1{
+
+    .sympt_title h1 {
         margin: auto;
         text-align: center;
         font-size: 250%;
         color: $zra9;
+
+        @media only screen and (max-width: 600px) {
+            font-size: 190%;
+        }
+
     }
-    .sympt_A{
+
+    .sympt_A {
         display: flex;
         justify-content: space-between;
         align-items: center;
         width: 50%;
         margin: 30px auto;
-        @media only screen and (max-width: 600px ){
-           flex-direction: column;
+
+        @media only screen and (max-width: 600px) {
+            flex-direction: column;
         }
     }
-    .sympt_A_2, .sympt_A_1{
+
+    .sympt_A_2,
+    .sympt_A_1 {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        width: 40%;
+        width: 100%;
     }
-    .sympt_A_2{
+
+    .sympt_A_2 {
         margin-left: 40px;
     }
-    img{
+
+    img {
         margin: auto;
         align-items: center;
         height: 160px;
     }
 
 }
-.Recommandations{
+
+.Recommandations {
     // display: flex;
     padding-left: 80px;
     padding-right: 80px;
     padding-top: 10px;
+    padding-bottom: 10px;
     background-color: $zra9;
-    .Recommandations_title h1{
+    height: auto;
+
+    .Recommandations_title h1 {
         font-size: 40px;
         text-align: center;
         color: white;
 
+        @media only screen and (max-width: 600px) {
+            font-size: 30px;
+        }
+
     }
-    .Recommandations_A{
+
+    .Recommandations_A {
         display: flex;
-        justify-content:space-evenly;
-        .Recommandations_text{
-            p{
+        justify-content: space-evenly;
+
+        @media only screen and (max-width: 1000px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .Recommandations_text {
+            p {
                 font-size: 25px;
                 color: white;
+
+                @media only screen and (max-width: 600px) {
+                    font-size: 18px;
+                }
             }
-            span{
+
+            span {
                 color: black;
             }
         }
     }
-    .Recommandations_contact{
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: center;
+
+    .Recommandations_contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
         width: 500px;
-        div{
-            h1{
+
+        @media only screen and (max-width: 600px) {
+            width: 150%;
+        }
+
+        div {
+            h1 {
                 font-size: 30px;
                 color: $sfar;
+                font-weight: bold;
             }
         }
-        .Recommandations_contact_number{
-            width: 110%;
+
+        .Recommandations_contact_number {
+            width: 60%;
             height: 60px;
+            padding: 10px;
             background-color: $sfar;
-            a{
+            border-radius: 10px;
+            text-align: center;
+
+            @media only screen and (max-width: 600px) {
+                margin-bottom: 20px;
+            }
+
+            a {
                 text-decoration: none;
                 font-size: 30px;
                 margin: auto;
+                font-weight: bold;
+                color: $zra9;
+
+                @media only screen and (max-width: 600px) {
+                    font-size: 26px;
+                }
             }
         }
+
+        .Recommandations_contact_site {
+            margin-top: 40px;
+
+            @media only screen and (max-width: 600px) {
+                margin-top: -10px;
+            }
+
+            a {
+                text-decoration: none;
+                font-size: 27px;
+                color: white;
+                border-bottom: 4px solid $sfar;
+
+                @media only screen and (max-width: 600px) {
+                    font-size: 20px;
+
+
+                }
+            }
+        }
+    }
+}
+
+// section befour footer
+section {
+
+    .start_test {
+        background-color: #96C5DC;
+        // margin-top: -25px;
+        padding: 5px;
+
+        div {
+            margin: auto;
+            text-align: center;
+
+            h1 {
+                text-align: center;
+                font-size: 30px;
+                color: $zra9;
+                font-weight: bold;
+            }
+        }
+
+        div {
+            margin-top: 20px;
+
+            button {
+                @include btn(40%);
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+footer {
+    .logo {
+        margin: auto;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .footer_info {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        padding: 20px;
+
+        .footer_menu {
+            margin-top: -60px;
+
+
+            div {
+
+                margin-top: 20px;
+                text-align: center;
+
+                button {
+                    @include LG-btn(100px, 40px);
+
+                }
+
+                a {
+                    text-decoration: none;
+                    font-size: $fontwiegth;
+                    font-weight: 500;
+                    color: black;
+                    &:visited{
+                        color: $zra9;
+                    }
+                }
+
+            }
+
+        }
+    }
+
+    .footer_contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        div {
+            margin-top: -15px;
+        }
+
+        .div_1 {
+            color: $zra9;
+            @media only screen and (max-width: 600px) {
+                font-size: 13px;
+
+
+            }
+        }
+        .div_2{
+            @media only screen and (max-width: 600px) {
+                font-size: 15px;
+                text-align: center;
+
+
+            }
+        }
+
+        .div_4,
+        .div_5 {
+            color: #369D53;
+
+        }
+
+
+    }
+    .footer_para{
+        font-size: 16px;
+        color: $grey;
+        line-height: 40px;
+        font-weight: 500;
+        @media only screen and (max-width: 1030px) {
+          text-align: center;
+          margin-top: -35px;
+
+
+        }
+    }
+    .bar{
+        background-color: $zra9;
+        width: 100%;
+        height: 30px;
+        border-radius:  10px 0 10px 0;
     }
 }
