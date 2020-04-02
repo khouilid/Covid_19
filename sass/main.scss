@@ -5,14 +5,12 @@ body {
     height: 1000px;
     margin: 0;
     padding: 0;
-
     font-family: 'Cairo', sans-serif;
-    // padding-top: 100px;
 }
 
 // navbar
 nav {
-    .container{
+    .container {
         background-image: url("../Assets/png/Merged\ bar-2.png");
         position: fixed;
         z-index: 10;
@@ -20,14 +18,14 @@ nav {
         opacity: 1;
 
     }
-   
+
     .navbar {
         display: flex;
         justify-content: space-between;
         padding: 10px;
         align-items: center;
         background-image: url("../Assets/png/Merged\ bar-1.png");
-      
+
 
         .navbar_menu {
             display: flex;
@@ -46,22 +44,25 @@ nav {
                     margin-right: $fontwiegth - 5px;
 
                 }
-                .navbar_link_1 a{
-                    &:active{
-                        color: $zra9;
-                    }
+
+                .navbar_link_1 a:active {
+
+                    color: $zra9;
+
                 }
-                .navbar_link_2 a{
-                    &:active{
-                        color: $zra9;
-                    }
+
+                .navbar_link_2 a:active {
+
+                    color: $zra9;
+
                 }
+
                 a {
                     text-decoration: none;
                     font-size: $fontwiegth;
                     font-weight: 500;
                     color: black;
-                   
+
 
                     @media only screen and (max-width: 700px) {
                         font-size: $fontwiegth - 5px;
@@ -104,6 +105,7 @@ nav {
 
 // header
 header {
+    // display: none;
     position: relative;
     top: 110px;
 
@@ -128,6 +130,7 @@ header {
 }
 
 .start {
+
     display: flex;
     padding: 20px;
     align-items: center;
@@ -202,7 +205,8 @@ header {
 }
 
 .sympt {
-    margin-top: 30px;
+    // margin-top: 30px;
+    // display: none;
 
     .sympt_title h1 {
         margin: auto;
@@ -419,7 +423,8 @@ footer {
                     font-size: $fontwiegth;
                     font-weight: 500;
                     color: black;
-                    &:visited{
+
+                    &:visited {
                         color: $zra9;
                     }
                 }
@@ -440,13 +445,15 @@ footer {
 
         .div_1 {
             color: $zra9;
+
             @media only screen and (max-width: 600px) {
                 font-size: 13px;
 
 
             }
         }
-        .div_2{
+
+        .div_2 {
             @media only screen and (max-width: 600px) {
                 font-size: 15px;
                 text-align: center;
@@ -463,22 +470,207 @@ footer {
 
 
     }
-    .footer_para{
+
+    .footer_para {
         font-size: 16px;
         color: $grey;
         line-height: 40px;
         font-weight: 500;
+
         @media only screen and (max-width: 1030px) {
-          text-align: center;
-          margin-top: -35px;
+            text-align: center;
+            margin-top: -35px;
 
 
         }
     }
-    .bar{
+
+    .bar {
         background-color: $zra9;
         width: 100%;
         height: 30px;
-        border-radius:  10px 0 10px 0;
+        border-radius: 10px 10px 0 0;
+    }
+}
+
+
+//  test line
+.test_line {
+    display: flex;
+    max-width: 40%;
+    justify-content: space-between;
+    margin: auto;
+
+    @media only screen and (max-width: 700px) {
+        max-width: 60%;
+
+
+    }
+
+    @media only screen and (max-width: 500px) {
+        max-width: 75%;
+
+
+    }
+
+    .point_1,
+    .point_2,
+    .point_3 {
+        margin: auto;
+        margin-top: 150px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: $CHIBI;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .point_1_1,
+        .point_2_2,
+        .point_3_3 {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: $zra9;
+            // margin: 12px auto;
+
+
+
+        }
+
+
+    }
+
+    .point_2,
+    .point_3 {
+        background-color: white;
+    }
+}
+
+.information {
+    // display: none;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    background-color: $CHIBI;
+    border-radius: 10px;
+
+    .information_line {
+        border-bottom: 3px solid $sfar;
+        width: 240px;
+        margin: auto;
+    }
+}
+
+section {
+    .info_str {
+        // display: none;
+        margin: 20px auto;
+        width: 30%;
+
+        @media only screen and (max-width: 700px) {
+            max-width: 100%;
+        }
+
+        @media only screen and (max-width: 400px) {
+            max-width: 100%;
+        }
+
+        button {
+            @include btn(100%);
+
+        }
+    }
+}
+
+// tile line
+.time_line {
+
+    margin-bottom: 40px;
+
+    .time_line_1 {
+
+        margin: auto;
+        width: 40%;
+        height: 15px;
+        background-color: $CHIBI;
+        border-radius: 20px;
+
+        div {
+
+            height: 15px;
+            background-color: $zra9;
+            border-radius: 20px;
+            display: block;
+            transition: 0.4s;
+            animation: move 2s;
+            animation-fill-mode: forwards;
+        }
+
+
+    }
+
+}
+
+// time line animation
+.anime_1 {
+    transition: 0.4s;
+    animation: move 2s;
+}
+
+@keyframes move {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 4.38%;
+    }
+
+}
+
+// Question 1
+.questions {
+    padding: 30px;
+
+    .question_1 {
+        width: 60%;
+        margin: auto;
+        text-align: center;
+        color: $zra9;
+    }
+
+    .question_1_OUI,
+    .question_1_NON {
+        width: 47%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        color: $zra9;
+
+        .check_OUI {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-left: 20px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            border: 3px solid $zra9;
+            input[type=radio]:checked .check_OUI{
+                border: 3px solid $sfar;
+                background-color: yellow;
+
+            }
+
+            // div{
+            //     opacity: 0;
+                
+            // }
+        }
+
     }
 }

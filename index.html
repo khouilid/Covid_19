@@ -43,7 +43,7 @@
                 votre médecin ou votre pharmacien</p>
         </div>
     </header>
-    <section>
+    <section style="display: none;" id="section_1">
         <div class="start">
             <div class="start_img">
                 <img src="Assets/png/Group_80.png" alt="Group_80">
@@ -60,12 +60,100 @@
                         test pour répondre en citoyen<br> éclairé selon vos symptômes.</h1>
                 </div>
                 <div class="stert_btn">
-                    <button>Demarer le test</button>
+                    <button id="btn_1">Demarer le test</button>
                 </div>
             </div>
         </div>
     </section>
-    <section class="sympt">
+    <!-- start the test  ******************************************************************-->
+    <section id="section_A">
+        <div class="test_line">
+            <div>
+                <div class="point_1">
+                    <div class="point_1_1">
+
+                    </div>
+
+                </div>
+                <div>
+                    <p>Informations</p>
+                </div>
+            </div>
+            <div>
+                <div class="point_2">
+                    <div class="point_2_2">
+
+                    </div>
+                </div>
+                <div>
+                    <p>Questionnaire</p>
+                </div>
+            </div>
+            <div>
+                <div class="point_3">
+                    <div class="point_3_3">
+
+                    </div>
+                </div>
+                <div>
+                    <p>Résultats</p>
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+    <section id="section_B" style="display: none;">
+
+        <div class="information">
+            <h1>Préambule</h1>
+            <p class="information_1">« L’application est fournie à titre gratuit, en l’état, uniquement à des fins
+                d’information pour contribuer à fluidifier la prise en charge des personnes par les services d’urgences
+                pendant l’épidémie de Coronavirus COVID-19. L’exhaustivité, l’exactitude, le caractère à jour des
+                informations et contenus mis à disposition dans cette application, ou leur adéquation à des finalités
+                particulières, ne sont pas garantis.</p>
+            <div class="information_line"></div>
+            <p> L’utilisation de l’application et de son contenu ne remplace en aucun cas le conseil nécessaire donné
+                par votre médecin ou votre pharmacien ou tout autre professionnel de santé compétent dans chaque cas
+                particulier. Tout examen ou décision de l’utilisateur doit être réalisé ou prise de manière autonome sur
+                la base de l’information scientifique et clinique pertinente, de la notice officielle du produit
+                concerné le cas échéant et en cas de doute, en consultant un médecin compétent. </p>
+        </div>
+        <div class="info_str">
+            <div class="stert_btn">
+                <button>Demarer le test</button>
+            </div>
+        </div>
+    </section>
+    <!-- line if test -->
+    <section class="time_line" id="time_line">
+        <div class="time_line_1">
+            <div></div>
+        </div>
+    </section>
+    <!-- question 1  ******************************************************************-->
+    <section>
+     <div class="questions">
+        <div class="question_1">
+            <h1>Pensez-vous avoir eu de la fièvre ces derniers jours (frissons, sueurs)</h1>
+        </div>
+        <div class="question_1_OUI">
+            <div class="check_OUI"><div><input type="radio" value="OUI"></div></div>
+            <div>
+                <h1>OUI</h1>
+            </div>
+        </div>
+        <div class="question_1_NON">
+            <div><input type="radio" value="NON"></div>
+            <div>
+                <h1>NON</h1>
+            </div>
+        </div>
+     </div>
+     
+    </section>
+    <section style="display: none;" id="section_2" class="sympt">
         <div class="sympt_title">
             <h1>Quels sont les symptômes à surveiller ?</h1>
         </div>
@@ -97,7 +185,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section style="display: none;" id="section_3">
     <section class="Recommandations">
         <div class="Recommandations_title">
             <h1>Recommandations officielles</h1>
@@ -130,7 +218,7 @@
             </div>
 
             <div class="stert_btn">
-                <button>Demarer le test</button>
+                <button id="btn_2">Demarer le test</button>
             </div>
 
         </div>
@@ -145,12 +233,12 @@
                     <button>ﻋﺮﺑﻲ</button>
                 </div>
                 <div class="navbar_link_2">
-                    <a href="#">
+                    <a href="index.html">
                         Accuiel
                     </a>
                 </div>
                 <div>
-                    <a href="#">
+                    <a href="Consiel.html">
                         Consiel
                     </a>
                 </div>
@@ -170,7 +258,7 @@
                 </div>
 
                 <div class="div_5">
-                    <h2>114</h2>
+                    <h2>141</h2>
                 </div>
                 </p>
             </div>
@@ -185,7 +273,7 @@
         <div class="bar"></div>
     </footer>
 
-
+    <script src="js/script.js"></script>
 </body>
 
 </html>
