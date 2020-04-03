@@ -9,12 +9,19 @@ body {
 
 // navbar
 nav {
-    .container{
+    .container {
         background-image: url("../Assets/png/Merged\ bar-2.png");
         position: fixed;
         z-index: 10;
         width: 100%;
         opacity: 1;
+        height: 70px;
+      
+
+    }
+    .navbar_logo img{
+        height: 41.5px;
+        margin-left: 30px;
     }
     .navbar {
         display: flex;
@@ -99,8 +106,9 @@ nav {
 }
 // alert after the navbar
 header {
+    // display: none;
     position: relative;
-    top: 110px;
+    top: 70px;
 
     div {
         height: auto;
@@ -110,13 +118,13 @@ header {
         text-align: center;
 
         h3 {
-
+            color: $zra9;
             margin: auto;
             text-align: center;
         }
 
         p {
-            color: $zra9;
+            color: black;
             margin: auto;
         }
     }
@@ -124,10 +132,10 @@ header {
 section{
     // padding: 20px;
     .protéger_title{
-        margin-top: 130px;
+        margin-top: 100px;
         text-align: center;
         color: $zra9;
-        font-size: 22px;
+        font-size: 20px;
         @media only screen and (max-width: 600px) {
             font-size: 15px;
 
@@ -139,7 +147,7 @@ section{
         align-items: center;
         width: 80%;
         flex-wrap: wrap;
-        margin: 50px auto;
+        margin: 10px auto;
         @media only screen and (max-width: 600px) {
             flex-direction: column;
             
@@ -267,11 +275,14 @@ section{
     .sympt_title h1 {
         margin: auto;
         text-align: center;
-        font-size: 250%;
+        font-size: 200%;
         color: $zra9;
 
         @media only screen and (max-width: 600px) {
             font-size: 190%;
+        }
+        @media only screen and (max-width: 600px) {
+            font-size: 160%;
         }
 
     }
@@ -328,7 +339,7 @@ section{
     height: auto;
 
     .Recommandations_title h1 {
-        font-size: 40px;
+        font-size: 30px;
         text-align: center;
         color: white;
 
@@ -350,17 +361,17 @@ section{
 
         .Recommandations_text {
             p {
-                font-size: 25px;
+                font-size: 20px;
                 color: white;
 
                 @media only screen and (max-width: 600px) {
                     font-size: 18px;
                 }
+               
             }
+           
 
-            span {
-                color: black;
-            }
+          
         }
     }
 
@@ -386,7 +397,7 @@ section{
 
         .Recommandations_contact_number {
             width: 60%;
-            height: 60px;
+            height: 55px;
             padding: 10px;
             background-color: $sfar;
             border-radius: 10px;
@@ -410,7 +421,7 @@ section{
         }
 
         .Recommandations_contact_site {
-            margin-top: 40px;
+            margin-top: 30px;
 
             @media only screen and (max-width: 600px) {
                 margin-top: -10px;
@@ -449,6 +460,11 @@ section {
                 font-size: 30px;
                 color: $zra9;
                 font-weight: bold;
+                @media only screen and (max-width: 600px) {
+                    font-size: 24px;
+
+
+                }
             }
         }
 

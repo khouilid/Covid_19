@@ -9,13 +9,19 @@ nav .container {
   position: fixed;
   z-index: 10;
   width: 100%;
-  opacity: 1; }
+  opacity: 1;
+  height: 70px; }
+
+nav .navbar_logo img {
+  height: 50px;
+  margin-left: 30px; }
 
 nav .navbar {
   display: flex;
   justify-content: space-between;
   padding: 10px;
   align-items: center;
+  height: 50px;
   background-image: url("../Assets/png/Merged bar-1.png"); }
   nav .navbar .navbar_menu {
     display: flex;
@@ -71,7 +77,7 @@ nav .navbar {
 
 header {
   position: relative;
-  top: 110px; }
+  top: 70px; }
   header div {
     height: auto;
     padding: 20px;
@@ -79,17 +85,18 @@ header {
     margin: auto;
     text-align: center; }
     header div h3 {
+      color: #0f6894;
       margin: auto;
       text-align: center; }
     header div p {
-      color: #0f6894;
+      color: black;
       margin: auto; }
 
 .start {
   display: flex;
   padding: 20px;
   align-items: center;
-  margin-top: 150px; }
+  margin-top: 80px; }
   @media only screen and (max-width: 1000px) {
     .start {
       flex-wrap: wrap; } }
@@ -136,11 +143,14 @@ header {
 .sympt .sympt_title h1 {
   margin: auto;
   text-align: center;
-  font-size: 250%;
+  font-size: 200%;
   color: #0f6894; }
   @media only screen and (max-width: 600px) {
     .sympt .sympt_title h1 {
       font-size: 190%; } }
+  @media only screen and (max-width: 600px) {
+    .sympt .sympt_title h1 {
+      font-size: 160%; } }
 
 .sympt .sympt_A {
   display: flex;
@@ -169,7 +179,7 @@ header {
   background-color: #0f6894;
   height: auto; }
   .Recommandations .Recommandations_title h1 {
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
     color: white; }
     @media only screen and (max-width: 600px) {
@@ -184,13 +194,11 @@ header {
         align-items: center;
         text-align: center; } }
     .Recommandations .Recommandations_A .Recommandations_text p {
-      font-size: 25px;
+      font-size: 20px;
       color: white; }
       @media only screen and (max-width: 600px) {
         .Recommandations .Recommandations_A .Recommandations_text p {
           font-size: 18px; } }
-    .Recommandations .Recommandations_A .Recommandations_text span {
-      color: black; }
   .Recommandations .Recommandations_contact {
     display: flex;
     flex-direction: column;
@@ -207,7 +215,7 @@ header {
       font-weight: bold; }
     .Recommandations .Recommandations_contact .Recommandations_contact_number {
       width: 60%;
-      height: 60px;
+      height: 55px;
       padding: 10px;
       background-color: #F4CF1B;
       border-radius: 10px;
@@ -225,7 +233,7 @@ header {
           .Recommandations .Recommandations_contact .Recommandations_contact_number a {
             font-size: 26px; } }
     .Recommandations .Recommandations_contact .Recommandations_contact_site {
-      margin-top: 40px; }
+      margin-top: 30px; }
       @media only screen and (max-width: 600px) {
         .Recommandations .Recommandations_contact .Recommandations_contact_site {
           margin-top: -10px; } }
@@ -249,6 +257,9 @@ section .start_test {
       font-size: 30px;
       color: #0f6894;
       font-weight: bold; }
+      @media only screen and (max-width: 600px) {
+        section .start_test div h1 {
+          font-size: 24px; } }
   section .start_test div {
     margin-top: 20px; }
     section .start_test div button {
@@ -346,7 +357,7 @@ footer .bar {
   .test_line .point_2,
   .test_line .point_3 {
     margin: auto;
-    margin-top: 150px;
+    margin-top: 100px;
     width: 40px;
     height: 40px;
     border-radius: 50%;
@@ -437,12 +448,13 @@ section .info_str {
   .questions .question_1 {
     width: 60%;
     margin: auto;
+    margin-top: -60px;
     text-align: center;
     color: #0f6894; }
     @media only screen and (max-width: 700px) {
       .questions .question_1 {
         width: 90%;
-        font-size: 18px; } }
+        font-size: 15px; } }
 
 .radio_G {
   width: 40%;

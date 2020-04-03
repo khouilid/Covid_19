@@ -10,7 +10,12 @@ nav .container {
   position: fixed;
   z-index: 10;
   width: 100%;
-  opacity: 1; }
+  opacity: 1;
+  height: 70px; }
+
+nav .navbar_logo img {
+  height: 41.5px;
+  margin-left: 30px; }
 
 nav .navbar {
   display: flex;
@@ -67,11 +72,12 @@ nav .navbar {
         background: none;
         border-radius: 10px;
         font-weight: 500;
-        font-family: 'Almarai', sans-serif; }
+        font-family: 'Almarai', sans-serif;
+        color: #0f6894; }
 
 header {
   position: relative;
-  top: 110px; }
+  top: 70px; }
   header div {
     height: auto;
     padding: 20px;
@@ -79,17 +85,18 @@ header {
     margin: auto;
     text-align: center; }
     header div h3 {
+      color: #0f6894;
       margin: auto;
       text-align: center; }
     header div p {
-      color: #0f6894;
+      color: black;
       margin: auto; }
 
 section .protéger_title {
-  margin-top: 130px;
+  margin-top: 100px;
   text-align: center;
   color: #0f6894;
-  font-size: 22px; }
+  font-size: 20px; }
   @media only screen and (max-width: 600px) {
     section .protéger_title {
       font-size: 15px; } }
@@ -100,7 +107,7 @@ section .protéger {
   align-items: center;
   width: 80%;
   flex-wrap: wrap;
-  margin: 50px auto; }
+  margin: 10px auto; }
   @media only screen and (max-width: 600px) {
     section .protéger {
       flex-direction: column; } }
@@ -182,11 +189,14 @@ section .information {
 section .sympt_title h1 {
   margin: auto;
   text-align: center;
-  font-size: 250%;
+  font-size: 200%;
   color: #0f6894; }
   @media only screen and (max-width: 600px) {
     section .sympt_title h1 {
       font-size: 190%; } }
+  @media only screen and (max-width: 600px) {
+    section .sympt_title h1 {
+      font-size: 160%; } }
 
 section .sympt_A {
   display: flex;
@@ -226,7 +236,7 @@ section .sympt_A_1 {
   background-color: #0f6894;
   height: auto; }
   .Recommandations .Recommandations_title h1 {
-    font-size: 40px;
+    font-size: 30px;
     text-align: center;
     color: white; }
     @media only screen and (max-width: 600px) {
@@ -241,13 +251,11 @@ section .sympt_A_1 {
         align-items: center;
         text-align: center; } }
     .Recommandations .Recommandations_A .Recommandations_text p {
-      font-size: 25px;
+      font-size: 20px;
       color: white; }
       @media only screen and (max-width: 600px) {
         .Recommandations .Recommandations_A .Recommandations_text p {
           font-size: 18px; } }
-    .Recommandations .Recommandations_A .Recommandations_text span {
-      color: black; }
   .Recommandations .Recommandations_contact {
     display: flex;
     flex-direction: column;
@@ -264,7 +272,7 @@ section .sympt_A_1 {
       font-weight: bold; }
     .Recommandations .Recommandations_contact .Recommandations_contact_number {
       width: 60%;
-      height: 60px;
+      height: 55px;
       padding: 10px;
       background-color: #F4CF1B;
       border-radius: 10px;
@@ -282,7 +290,7 @@ section .sympt_A_1 {
           .Recommandations .Recommandations_contact .Recommandations_contact_number a {
             font-size: 26px; } }
     .Recommandations .Recommandations_contact .Recommandations_contact_site {
-      margin-top: 40px; }
+      margin-top: 30px; }
       @media only screen and (max-width: 600px) {
         .Recommandations .Recommandations_contact .Recommandations_contact_site {
           margin-top: -10px; } }
@@ -306,6 +314,9 @@ section .start_test {
       font-size: 30px;
       color: #0f6894;
       font-weight: bold; }
+      @media only screen and (max-width: 600px) {
+        section .start_test div h1 {
+          font-size: 24px; } }
   section .start_test div {
     margin-top: 20px; }
     section .start_test div button {
@@ -343,7 +354,8 @@ footer .footer_info {
         background: none;
         border-radius: 10px;
         font-weight: 500;
-        font-family: 'Almarai', sans-serif; }
+        font-family: 'Almarai', sans-serif;
+        color: #0f6894; }
       footer .footer_info .footer_menu div a {
         text-decoration: none;
         font-size: 25px;

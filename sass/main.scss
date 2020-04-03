@@ -16,7 +16,13 @@ nav {
         z-index: 10;
         width: 100%;
         opacity: 1;
+        height: 70px;
+      
 
+    }
+    .navbar_logo img{
+        height: 50px;
+        margin-left: 30px;
     }
 
     .navbar {
@@ -24,6 +30,7 @@ nav {
         justify-content: space-between;
         padding: 10px;
         align-items: center;
+        height: 50px;
         background-image: url("../Assets/png/Merged\ bar-1.png");
 
 
@@ -107,7 +114,7 @@ nav {
 header {
     // display: none;
     position: relative;
-    top: 110px;
+    top: 70px;
 
     div {
         height: auto;
@@ -117,13 +124,13 @@ header {
         text-align: center;
 
         h3 {
-
+            color: $zra9;
             margin: auto;
             text-align: center;
         }
 
         p {
-            color: $zra9;
+            color: black;
             margin: auto;
         }
     }
@@ -134,6 +141,7 @@ header {
     display: flex;
     padding: 20px;
     align-items: center;
+    margin-top: 80px;
 
     @media only screen and (max-width: 1000px) {
         flex-wrap: wrap;
@@ -141,7 +149,7 @@ header {
     }
 
     // flex-wrap: wrap;
-    margin-top: 150px;
+    
 
     .start_img img {
         width: 98%;
@@ -211,11 +219,15 @@ header {
     .sympt_title h1 {
         margin: auto;
         text-align: center;
-        font-size: 250%;
+        font-size: 200%;
         color: $zra9;
 
         @media only screen and (max-width: 600px) {
             font-size: 190%;
+        }
+        
+        @media only screen and (max-width: 600px) {
+            font-size: 160%;
         }
 
     }
@@ -254,7 +266,7 @@ header {
     height: auto;
 
     .Recommandations_title h1 {
-        font-size: 40px;
+        font-size: 30px;
         text-align: center;
         color: white;
 
@@ -276,17 +288,17 @@ header {
 
         .Recommandations_text {
             p {
-                font-size: 25px;
+                font-size: 20px;
                 color: white;
 
                 @media only screen and (max-width: 600px) {
                     font-size: 18px;
                 }
+               
             }
+           
 
-            span {
-                color: black;
-            }
+          
         }
     }
 
@@ -312,7 +324,7 @@ header {
 
         .Recommandations_contact_number {
             width: 60%;
-            height: 60px;
+            height: 55px;
             padding: 10px;
             background-color: $sfar;
             border-radius: 10px;
@@ -336,7 +348,7 @@ header {
         }
 
         .Recommandations_contact_site {
-            margin-top: 40px;
+            margin-top: 30px;
 
             @media only screen and (max-width: 600px) {
                 margin-top: -10px;
@@ -363,7 +375,6 @@ section {
 
     .start_test {
         background-color: $CHIBI;
-        // margin-top: -25px;
         padding: 5px;
 
         div {
@@ -375,6 +386,11 @@ section {
                 font-size: 30px;
                 color: $zra9;
                 font-weight: bold;
+                @media only screen and (max-width: 600px) {
+                    font-size: 24px;
+
+
+                }
             }
         }
 
@@ -517,7 +533,7 @@ footer {
     .point_2,
     .point_3 {
         margin: auto;
-        margin-top: 150px;
+        margin-top: 100px;
         width: 40px;
         height: 40px;
         border-radius: 50%;
@@ -644,12 +660,13 @@ section {
     .question_1 {
         width: 60%;
         margin: auto;
+        margin-top: -60px;
         text-align: center;
         color: $zra9;
         
         @media only screen and (max-width: 700px) {
             width: 90%;
-            font-size: 18px;
+            font-size: 15px;
         }
     }
 }

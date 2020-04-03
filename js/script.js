@@ -16,6 +16,8 @@ btn_1.addEventListener("click", function( ) {
     // section_3.style.display = "none";
     section_A.style.display = "block";
     section_B.style.display = "block";
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 
 })
 btn_2.addEventListener("click", function( ) {
@@ -30,5 +32,7 @@ btn_dema.addEventListener("click", function(){
     section_B.style.display = "none";
     Question_1.style.display = "block";
     time_line.style.display= "block";
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 
 })
