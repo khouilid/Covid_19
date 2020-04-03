@@ -43,7 +43,7 @@
                 votre médecin ou votre pharmacien</p>
         </div>
     </header>
-    <section style="display: none;" id="section_1">
+    <section style="display: block;" id="section_1">
         <div class="start">
             <div class="start_img">
                 <img src="Assets/png/Group_80.png" alt="Group_80">
@@ -66,7 +66,7 @@
         </div>
     </section>
     <!-- start the test  ******************************************************************-->
-    <section id="section_A">
+    <section style="display: none;" id="section_A">
         <div class="test_line">
             <div>
                 <div class="point_1">
@@ -122,38 +122,47 @@
         </div>
         <div class="info_str">
             <div class="stert_btn">
-                <button>Demarer le test</button>
+                <button id="btn_dema">Demarer le test</button>
             </div>
         </div>
     </section>
     <!-- line if test -->
-    <section class="time_line" id="time_line">
+    <section class="time_line"  style="display: none;" id="time_line">
         <div class="time_line_1">
             <div></div>
         </div>
     </section>
     <!-- question 1  ******************************************************************-->
-    <section>
-     <div class="questions">
-        <div class="question_1">
-            <h1>Pensez-vous avoir eu de la fièvre ces derniers jours (frissons, sueurs)</h1>
-        </div>
-        <div class="question_1_OUI">
-            <div class="check_OUI"><div><input type="radio" value="OUI"></div></div>
-            <div>
-                <h1>OUI</h1>
+    <section id="question_1" style="display: none;">
+        <div class="questions">
+            <div class="question_1">
+                <h1>Pensez-vous avoir eu de la fièvre ces derniers jours (frissons, sueurs)?</h1>
+            </div>
+            <div class="radio_G">
+                <div class="option">
+                    <input type="radio" id="check1" name="check"/>
+                    <label for="check1"> OUI</label>
+
+                </div>
+                <div class="option">
+                    <input type="radio" id="check2" name="check"/>
+                    <label for="check2"> NON</label>
+
+                </div>
+
             </div>
         </div>
-        <div class="question_1_NON">
-            <div><input type="radio" value="NON"></div>
-            <div>
-                <h1>NON</h1>
-            </div>
+        <div class="notiv">
+            <p>La prise d'anti-inflammatoires (ibuprofène, cortisone ...) pourrait être un facteur d'aggravation de l’infection. En cas de fièvre, prenez du paracétamol. Cette remarque concerte les traitements par gélules ou comprimés et ne concerne pas les formes inhalées. Si vous êtes déjà sous traitement, n'arrêtez pas ce traitement, demandez l'avis de votre médecin ou de votre pharmacien. </p>
         </div>
-     </div>
-     
+        <div class="btns">
+            <div class="btn-return"><button>question d'avant</button></div>
+            <div class="btn_next"><button>question suivante</button></div>
+           
+        </div>
+
     </section>
-    <section style="display: none;" id="section_2" class="sympt">
+    <section style="display: block;" id="section_2" class="sympt">
         <div class="sympt_title">
             <h1>Quels sont les symptômes à surveiller ?</h1>
         </div>
@@ -185,7 +194,7 @@
                 </div>
             </div>
         </div>
-    </section style="display: none;" id="section_3">
+    </section style="display: block;" id="section_3">
     <section class="Recommandations">
         <div class="Recommandations_title">
             <h1>Recommandations officielles</h1>

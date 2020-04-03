@@ -597,6 +597,10 @@ section {
         height: 15px;
         background-color: $CHIBI;
         border-radius: 20px;
+        
+        @media only screen and (max-width: 700px) {
+            width: 60%;
+        }
 
         div {
 
@@ -635,42 +639,104 @@ section {
 .questions {
     padding: 30px;
 
+
+
     .question_1 {
         width: 60%;
         margin: auto;
         text-align: center;
         color: $zra9;
-    }
-
-    .question_1_OUI,
-    .question_1_NON {
-        width: 47%;
-        margin: auto;
-        display: flex;
-        align-items: center;
-        color: $zra9;
-
-        .check_OUI {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            margin-left: 20px;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            border: 3px solid $zra9;
-            input[type=radio]:checked .check_OUI{
-                border: 3px solid $sfar;
-                background-color: yellow;
-
-            }
-
-            // div{
-            //     opacity: 0;
-                
-            // }
+        
+        @media only screen and (max-width: 700px) {
+            width: 90%;
+            font-size: 18px;
         }
+    }
+}
+.radio_G{
+    width: 40%;
+    margin: auto;
+    @media only screen and (max-width: 700px) {
+        width: 50%;
+    
+    }
+    .option{
+        position: relative;
+        input{
+            display: none;
+        }
+        label{
+            font-size: 20px;
+            cursor: pointer;
+            color: $zra9;
+            margin-left: 20px;
+            
+      
+      
+        }
+    }
+    .option label::after{
+        position: absolute;
+        content: "";
+        width: 20px;
+        height: 20px;
+        border: 4px solid $zra9;
+        border-radius: 50%;
+        left: -20px;
+        top: 5px;
 
+    }
+    .option label::before{
+        position: absolute;
+        content: "";
+        width: 16px;
+        height: 16px;
+        background-color: $sfar;
+        border-radius: 50%;
+        left: -14px;
+        top: 10.5px;
+        opacity: 0;
+
+    }
+    .option input:checked ~ label::before{
+        opacity: 1;
+
+    }
+}
+.notiv{
+    width: 50%;
+    padding: 20px;
+    text-align: center;background-color: $sfar;
+    border-radius: 10px;
+    margin: auto;
+     @media only screen and (max-width: 500px) {
+            width: 70%;
+        
+        }
+    
+}
+
+// btns
+.btns{
+    margin-bottom: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    padding: 50px;
+    @media only screen and (max-width: 550px) {
+       justify-content: space-between;
+    
+    }
+   
+    .btn-return button, .btn_next button{
+        @include btn(120%);
+        @media only screen and (max-width: 500px) {
+            font-size: medium;
+            width: 100%;
+        
+        }
+    }
+    .btn-return button{
+        opacity: 0;
     }
 }
