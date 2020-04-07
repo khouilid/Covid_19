@@ -1,0 +1,392 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+}
+nav {
+    .container {
+        background-image: url("../Assets/png/Merged\ bar-2.png");
+        position: fixed;
+        z-index: 10;
+        width: 100%;
+        height: 70px;
+
+
+    }
+
+    .navbar_logo img {
+        height: 50px;
+        margin-left: 30px;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        align-items: center;
+        height: 50px;
+        background-image: url("../Assets/png/Merged\ bar-1.png");
+
+
+        .navbar_menu {
+            display: flex;
+            align-items: center;
+
+            .navbar_link_1,
+            .navbar_link_2 {
+                margin-right: $fontwiegth + 15px;
+
+                @media only screen and (max-width: 700px) {
+                    margin-right: $fontwiegth + 1px;
+
+                }
+
+                @media only screen and (max-width: 500px) {
+                    margin-right: $fontwiegth - 5px;
+
+                }
+
+                .navbar_link_1 a:active {
+
+                    color: $zra9;
+
+                }
+
+                .navbar_link_2 a:active {
+
+                    color: $zra9;
+
+                }
+
+                a {
+                    text-decoration: none;
+                    font-size: 20px;
+                    font-weight: 500;
+                    color: black;
+
+
+                    @media only screen and (max-width: 700px) {
+                        font-size: 18px;
+
+                    }
+
+                    @media only screen and (max-width: 500px) {
+                        font-size: 15px;
+
+                    }
+                }
+
+            }
+
+            .navbar_switch {
+                margin-right: $fontwiegth + 35px;
+
+                @media only screen and (max-width: 500px) {
+                    margin-right: $fontwiegth;
+
+                }
+
+                @media only screen and (max-width: 500px) {
+                    margin-right: $fontwiegth - 5px;
+
+                }
+
+                button {
+                    @include LG-btn(80px, 30px);
+                    // font-family: 'Cairo', sans-serif;
+                }
+            }
+
+
+        }
+
+    }
+
+}
+
+
+
+
+// header
+header {
+    // display: none;
+    position: relative;
+    top: 70px;
+
+    div {
+        height: auto;
+        padding: 10px;
+        background-color: $sfar;
+        margin: auto;
+        text-align: center;
+
+        h3 {
+            color: $zra9;
+            margin: auto;
+            text-align: center;
+        }
+
+        p {
+            color: black;
+            margin: auto;
+        }
+    }
+}
+
+
+
+
+
+.Recommandations {
+    // display: flex;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: $zra9;
+    height: auto;
+
+    .Recommandations_title h1 {
+        font-size: 30px;
+        text-align: center;
+        color: white;
+
+        @media only screen and (max-width: 600px) {
+            font-size: 27px;
+        }
+
+    }
+
+    .Recommandations_A {
+        display: flex;
+        justify-content: space-evenly;
+
+        @media only screen and (max-width: 1000px) {
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .Recommandations_text {
+            p {
+                font-size: 20px;
+                color: white;
+
+                @media only screen and (max-width: 600px) {
+                    font-size: 16px;
+                }
+
+            }
+
+
+
+        }
+    }
+
+    .Recommandations_contact {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 500px;
+
+        @media only screen and (max-width: 600px) {
+            width: 150%;
+        }
+
+        div {
+            h1 {
+                font-size: 30px;
+                color: $sfar;
+                font-weight: bold;
+            }
+        }
+
+        .Recommandations_contact_number {
+            width: 60%;
+            height: 55px;
+            padding: 10px;
+            background-color: $sfar;
+            border-radius: 10px;
+            text-align: center;
+
+            @media only screen and (max-width: 600px) {
+                margin-bottom: 20px;
+            }
+
+            a {
+                text-decoration: none;
+                font-size: 30px;
+                margin: auto;
+                font-weight: bold;
+                color: $zra9;
+
+                @media only screen and (max-width: 600px) {
+                    font-size: 26px;
+                }
+            }
+        }
+
+        .Recommandations_contact_site {
+            margin-top: 30px;
+
+            @media only screen and (max-width: 600px) {
+                margin-top: -10px;
+            }
+
+            a {
+                text-decoration: none;
+                font-size: 27px;
+                color: white;
+                border-bottom: 4px solid $sfar;
+
+                @media only screen and (max-width: 600px) {
+                    font-size: 20px;
+
+
+                }
+            }
+        }
+    }
+}
+
+// section befour footer
+section {
+
+    .start_test {
+        background-color: $CHIBI;
+        padding: 5px;
+
+        div {
+            margin: auto;
+            text-align: center;
+
+            h1 {
+                text-align: center;
+                font-size: 30px;
+                color: $zra9;
+                font-weight: bold;
+
+                @media only screen and (max-width: 600px) {
+                    font-size: 24px;
+
+
+                }
+            }
+        }
+
+        div {
+            margin-top: 20px;
+
+            button {
+                @include btn(40%);
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+footer {
+    .logo {
+        margin: auto;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .footer_info {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 30px;
+        padding: 20px;
+
+        .footer_menu {
+            margin-top: -60px;
+
+
+            div {
+
+                margin-top: 20px;
+                text-align: center;
+
+                button {
+                    @include LG-btn(100px, 40px);
+
+                }
+
+                a {
+                    text-decoration: none;
+                    font-size: $fontwiegth;
+                    font-weight: 500;
+                    color: black;
+
+                    &:visited {
+                        color: $zra9;
+                    }
+                }
+
+            }
+
+        }
+    }
+
+    .footer_contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        div {
+            margin-top: -15px;
+        }
+
+        .div_1 {
+            color: $zra9;
+
+            @media only screen and (max-width: 600px) {
+                font-size: 13px;
+
+
+            }
+        }
+
+        .div_2 {
+            @media only screen and (max-width: 600px) {
+                font-size: 15px;
+                text-align: center;
+
+
+            }
+        }
+
+        .div_4,
+        .div_5 {
+            color: #369D53;
+
+        }
+
+
+    }
+
+    .footer_para {
+        font-size: 16px;
+        color: $grey;
+        line-height: 40px;
+        font-weight: 500;
+
+        @media only screen and (max-width: 1030px) {
+            text-align: center;
+            margin-top: -35px;
+
+
+        }
+    }
+
+    .bar {
+        background-color: $zra9;
+        width: 100%;
+        height: 30px;
+        border-radius: 10px 10px 0 0;
+    }
+}

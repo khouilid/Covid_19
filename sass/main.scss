@@ -1,140 +1,7 @@
 @import "../sass/variable.scss";
 @import "../sass/mixins.scss";
-
-body {
-    height: 1000px;
-    margin: 0;
-    padding: 0;
-    font-family: 'Cairo', sans-serif;
-}
-
-// navbar
-nav {
-    .container {
-        background-image: url("../Assets/png/Merged\ bar-2.png");
-        position: fixed;
-        z-index: 10;
-        width: 100%;
-        opacity: 1;
-        height: 70px;
-      
-
-    }
-    .navbar_logo img{
-        height: 50px;
-        margin-left: 30px;
-    }
-
-    .navbar {
-        display: flex;
-        justify-content: space-between;
-        padding: 10px;
-        align-items: center;
-        height: 50px;
-        background-image: url("../Assets/png/Merged\ bar-1.png");
-
-
-        .navbar_menu {
-            display: flex;
-            align-items: center;
-
-            .navbar_link_1,
-            .navbar_link_2 {
-                margin-right: $fontwiegth + 15px;
-
-                @media only screen and (max-width: 700px) {
-                    margin-right: $fontwiegth + 1px;
-
-                }
-
-                @media only screen and (max-width: 500px) {
-                    margin-right: $fontwiegth - 5px;
-
-                }
-
-                .navbar_link_1 a:active {
-
-                    color: $zra9;
-
-                }
-
-                .navbar_link_2 a:active {
-
-                    color: $zra9;
-
-                }
-
-                a {
-                    text-decoration: none;
-                    font-size: $fontwiegth;
-                    font-weight: 500;
-                    color: black;
-
-
-                    @media only screen and (max-width: 700px) {
-                        font-size: $fontwiegth - 5px;
-
-                    }
-
-                    @media only screen and (max-width: 500px) {
-                        font-size: $fontwiegth - 10px;
-
-                    }
-                }
-
-            }
-
-            .navbar_switch {
-                margin-right: $fontwiegth + 35px;
-
-                @media only screen and (max-width: 500px) {
-                    margin-right: $fontwiegth;
-
-                }
-
-                @media only screen and (max-width: 500px) {
-                    margin-right: $fontwiegth - 5px;
-
-                }
-
-                button {
-                    @include LG-btn(80px, 30px);
-                    // font-family: 'Cairo', sans-serif;
-                }
-            }
-
-
-        }
-
-    }
-
-}
-
-// header
-header {
-    // display: none;
-    position: relative;
-    top: 70px;
-
-    div {
-        height: auto;
-        padding: 20px;
-        background-color: $sfar;
-        margin: auto;
-        text-align: center;
-
-        h3 {
-            color: $zra9;
-            margin: auto;
-            text-align: center;
-        }
-
-        p {
-            color: black;
-            margin: auto;
-        }
-    }
-}
+@import "../sass/NFH.scss";
+@import "./Animation.scss";
 
 .start {
 
@@ -147,17 +14,12 @@ header {
         flex-wrap: wrap;
 
     }
-
-    // flex-wrap: wrap;
-    
-
     .start_img img {
         width: 98%;
     }
 
     .start_txt {
 
-        // margin-top: 50px;
         div {
             width: 86%;
             margin-left: 30px;
@@ -194,7 +56,6 @@ header {
 
             img {
                 margin: auto;
-                // text-align: center;
                 display: flex;
                 justify-content: center;
             }
@@ -213,9 +74,6 @@ header {
 }
 
 .sympt {
-    // margin-top: 30px;
-    // display: none;
-
     .sympt_title h1 {
         margin: auto;
         text-align: center;
@@ -225,7 +83,7 @@ header {
         @media only screen and (max-width: 600px) {
             font-size: 190%;
         }
-        
+
         @media only screen and (max-width: 600px) {
             font-size: 160%;
         }
@@ -255,261 +113,6 @@ header {
     }
 
 }
-
-.Recommandations {
-    // display: flex;
-    padding-left: 80px;
-    padding-right: 80px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    background-color: $zra9;
-    height: auto;
-
-    .Recommandations_title h1 {
-        font-size: 30px;
-        text-align: center;
-        color: white;
-
-        @media only screen and (max-width: 600px) {
-            font-size: 30px;
-        }
-
-    }
-
-    .Recommandations_A {
-        display: flex;
-        justify-content: space-evenly;
-
-        @media only screen and (max-width: 1000px) {
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .Recommandations_text {
-            p {
-                font-size: 20px;
-                color: white;
-
-                @media only screen and (max-width: 600px) {
-                    font-size: 18px;
-                }
-               
-            }
-           
-
-          
-        }
-    }
-
-    .Recommandations_contact {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        width: 500px;
-
-        @media only screen and (max-width: 600px) {
-            width: 150%;
-        }
-
-        div {
-            h1 {
-                font-size: 30px;
-                color: $sfar;
-                font-weight: bold;
-            }
-        }
-
-        .Recommandations_contact_number {
-            width: 60%;
-            height: 55px;
-            padding: 10px;
-            background-color: $sfar;
-            border-radius: 10px;
-            text-align: center;
-
-            @media only screen and (max-width: 600px) {
-                margin-bottom: 20px;
-            }
-
-            a {
-                text-decoration: none;
-                font-size: 30px;
-                margin: auto;
-                font-weight: bold;
-                color: $zra9;
-
-                @media only screen and (max-width: 600px) {
-                    font-size: 26px;
-                }
-            }
-        }
-
-        .Recommandations_contact_site {
-            margin-top: 30px;
-
-            @media only screen and (max-width: 600px) {
-                margin-top: -10px;
-            }
-
-            a {
-                text-decoration: none;
-                font-size: 27px;
-                color: white;
-                border-bottom: 4px solid $sfar;
-
-                @media only screen and (max-width: 600px) {
-                    font-size: 20px;
-
-
-                }
-            }
-        }
-    }
-}
-
-// section befour footer
-section {
-
-    .start_test {
-        background-color: $CHIBI;
-        padding: 5px;
-
-        div {
-            margin: auto;
-            text-align: center;
-
-            h1 {
-                text-align: center;
-                font-size: 30px;
-                color: $zra9;
-                font-weight: bold;
-                @media only screen and (max-width: 600px) {
-                    font-size: 24px;
-
-
-                }
-            }
-        }
-
-        div {
-            margin-top: 20px;
-
-            button {
-                @include btn(40%);
-                margin-bottom: 10px;
-            }
-        }
-    }
-}
-
-footer {
-    .logo {
-        margin: auto;
-        text-align: center;
-        margin-top: 20px;
-    }
-
-    .footer_info {
-        display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-top: 30px;
-        padding: 20px;
-
-        .footer_menu {
-            margin-top: -60px;
-
-
-            div {
-
-                margin-top: 20px;
-                text-align: center;
-
-                button {
-                    @include LG-btn(100px, 40px);
-
-                }
-
-                a {
-                    text-decoration: none;
-                    font-size: $fontwiegth;
-                    font-weight: 500;
-                    color: black;
-
-                    &:visited {
-                        color: $zra9;
-                    }
-                }
-
-            }
-
-        }
-    }
-
-    .footer_contact {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        div {
-            margin-top: -15px;
-        }
-
-        .div_1 {
-            color: $zra9;
-
-            @media only screen and (max-width: 600px) {
-                font-size: 13px;
-
-
-            }
-        }
-
-        .div_2 {
-            @media only screen and (max-width: 600px) {
-                font-size: 15px;
-                text-align: center;
-
-
-            }
-        }
-
-        .div_4,
-        .div_5 {
-            color: #369D53;
-
-        }
-
-
-    }
-
-    .footer_para {
-        font-size: 16px;
-        color: $grey;
-        line-height: 40px;
-        font-weight: 500;
-
-        @media only screen and (max-width: 1030px) {
-            text-align: center;
-            margin-top: -35px;
-
-
-        }
-    }
-
-    .bar {
-        background-color: $zra9;
-        width: 100%;
-        height: 30px;
-        border-radius: 10px 10px 0 0;
-    }
-}
-
-
 //  test line
 .test_line {
     display: flex;
@@ -525,10 +128,7 @@ footer {
 
     @media only screen and (max-width: 500px) {
         max-width: 75%;
-
-
     }
-
     .point_1,
     .point_2,
     .point_3 {
@@ -541,7 +141,6 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
-
         .point_1_1,
         .point_2_2,
         .point_3_3 {
@@ -549,15 +148,8 @@ footer {
             height: 15px;
             border-radius: 50%;
             background-color: $zra9;
-            // margin: 12px auto;
-
-
-
         }
-
-
     }
-
     .point_2,
     .point_3 {
         background-color: white;
@@ -565,7 +157,6 @@ footer {
 }
 
 .information {
-    // display: none;
     width: 70%;
     margin: auto;
     text-align: center;
@@ -582,16 +173,13 @@ footer {
 
 section {
     .info_str {
-        // display: none;
-        margin: 20px auto;
-        width: 30%;
+        .stert_btn{
+            margin: 20px auto;
+            width: 30%;
+            @media only screen and (max-width: 500px) {
+                width: 75%;
+            }
 
-        @media only screen and (max-width: 700px) {
-            max-width: 100%;
-        }
-
-        @media only screen and (max-width: 400px) {
-            max-width: 100%;
         }
 
         button {
@@ -613,7 +201,7 @@ section {
         height: 15px;
         background-color: $CHIBI;
         border-radius: 20px;
-        
+
         @media only screen and (max-width: 700px) {
             width: 60%;
         }
@@ -628,34 +216,15 @@ section {
             animation: move 2s;
             animation-fill-mode: forwards;
         }
-
-
     }
 
 }
 
-// time line animation
-.anime_1 {
-    transition: 0.4s;
-    animation: move 2s;
-}
 
-@keyframes move {
-    0% {
-        width: 0%;
-    }
-
-    100% {
-        width: 4.38%;
-    }
-
-}
 
 // Question 1
 .questions {
     padding: 30px;
-
-
 
     .question_1 {
         width: 60%;
@@ -663,36 +232,39 @@ section {
         margin-top: -60px;
         text-align: center;
         color: $zra9;
-        
+
         @media only screen and (max-width: 700px) {
             width: 90%;
             font-size: 15px;
         }
     }
 }
-.radio_G{
+
+.radio_G {
     width: 40%;
     margin: auto;
+
     @media only screen and (max-width: 700px) {
         width: 50%;
-    
+
     }
-    .option{
+
+    .option {
         position: relative;
-        input{
+
+        input {
             display: none;
         }
-        label{
+
+        label {
             font-size: 20px;
             cursor: pointer;
             color: $zra9;
             margin-left: 20px;
-            
-      
-      
         }
     }
-    .option label::after{
+
+    .option label::after {
         position: absolute;
         content: "";
         width: 20px;
@@ -703,7 +275,8 @@ section {
         top: 5px;
 
     }
-    .option label::before{
+
+    .option label::before {
         position: absolute;
         content: "";
         width: 16px;
@@ -715,45 +288,54 @@ section {
         opacity: 0;
 
     }
-    .option input:checked ~ label::before{
+
+    .option input:checked~label::before {
         opacity: 1;
 
     }
 }
-.notiv{
+
+.notiv {
     width: 50%;
     padding: 20px;
-    text-align: center;background-color: $sfar;
+    text-align: center;
+    background-color: $sfar;
     border-radius: 10px;
     margin: auto;
-     @media only screen and (max-width: 500px) {
-            width: 70%;
-        
-        }
-    
+
+    @media only screen and (max-width: 500px) {
+        width: 70%;
+
+    }
+
 }
 
 // btns
-.btns{
+.btns {
     margin-bottom: 100px;
     display: flex;
     justify-content: space-evenly;
     margin: auto;
     padding: 50px;
+
     @media only screen and (max-width: 550px) {
-       justify-content: space-between;
-    
+        justify-content: space-between;
+
     }
-   
-    .btn-return button, .btn_next button{
+
+    .btn-return button,
+    .btn_next button {
         @include btn(120%);
+
         @media only screen and (max-width: 500px) {
             font-size: medium;
             width: 100%;
-        
+
         }
     }
-    .btn-return button{
+    .return{
         opacity: 0;
     }
+
+  
 }
