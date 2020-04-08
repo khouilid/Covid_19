@@ -10,6 +10,7 @@ IDs = {
     btn_dema: document.getElementById("btn_dema"),
     time_line: document.getElementById("time_line"),
     Question_2: document.getElementById("question_2"),
+      // buttons
     line: document.getElementById("line"),
     Q_2: document.getElementById("Q_2"),
     Q_3: document.getElementById("Q_3"),
@@ -29,6 +30,12 @@ IDs = {
     Q_17: document.getElementById("Q_17"),
     Q_18: document.getElementById("Q_18"),
     Q_19: document.getElementById("Q_19"),
+    IQ_1: document.getElementById("IQ_1"),
+    IQ_2: document.getElementById("IQ_2"),
+    IQ_3: document.getElementById("IQ_3"),
+    IQ_4: document.getElementById("IQ_4"),
+    IQ_5: document.getElementById("IQ_5"),
+//   Question section
     Question_1: document.getElementById("question_1"),
     Question_2: document.getElementById("question_2"),
     Question_3: document.getElementById("question_3"),
@@ -48,16 +55,15 @@ IDs = {
     Question_17: document.getElementById("question_17"),
     Question_18: document.getElementById("question_18"),
     Question_19: document.getElementById("question_19"),
+    Question_20: document.getElementById("question_I_1"),
+    Question_21: document.getElementById("question_I_2"),
+    Question_22: document.getElementById("question_I_3"),
+    Question_23: document.getElementById("question_I_4"),
 
-    Question_I_1: document.getElementById("question_I_1"),
-    Question_I_2: document.getElementById("question_I_2"),
-    Question_I_3: document.getElementById("question_I_3"),
-    Question_I_4: document.getElementById("question_I_4"),
-
-    IQ_1: document.getElementById("IQ_1"),
-    IQ_2: document.getElementById("IQ_2"),
-    IQ_3: document.getElementById("IQ_3"),
-    IQ_4: document.getElementById("IQ_4"),
+   
+//    input Questions
+    temp: document.getElementById("temp"),
+    Age: document.getElementById("Age"),
 
 
 }

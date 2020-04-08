@@ -168,13 +168,34 @@
     }
 
     100% {
-        width: 80%;
+        width: 75%;
     }
 
 }
 @keyframes move18 {
     0% {
+        width: 75%;
+    }
+
+    100% {
         width: 80%;
+    }
+
+}
+@keyframes move19 {
+    0% {
+        width: 80%;
+    }
+
+    100% {
+        width: 85%;
+    }
+
+}
+
+@keyframes move20 {
+    0% {
+        width: 85%;
     }
 
     100% {
@@ -182,9 +203,19 @@
     }
 
 }
-@keyframes move19 {
+@keyframes move21 {
     0% {
         width: 90%;
+    }
+
+    100% {
+        width: 95%;
+    }
+
+}
+@keyframes move22 {
+    0% {
+        width: 95%;
     }
 
     100% {
