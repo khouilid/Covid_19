@@ -30,11 +30,11 @@ IDs = {
     Q_17: document.getElementById("Q_17"),
     Q_18: document.getElementById("Q_18"),
     Q_19: document.getElementById("Q_19"),
-    IQ_1: document.getElementById("IQ_1"),
     IQ_2: document.getElementById("IQ_2"),
     IQ_3: document.getElementById("IQ_3"),
     IQ_4: document.getElementById("IQ_4"),
     IQ_5: document.getElementById("IQ_5"),
+    Result: document.getElementById("Result"),
 //   Question section
     Question_1: document.getElementById("question_1"),
     Question_2: document.getElementById("question_2"),
@@ -64,6 +64,7 @@ IDs = {
 //    input Questions
     temp: document.getElementById("temp"),
     Age: document.getElementById("Age"),
+    
 
 
 }
