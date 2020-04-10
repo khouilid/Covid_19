@@ -26,7 +26,8 @@ nav .navbar {
     align-items: center; }
     nav .navbar .navbar_menu .navbar_link_1,
     nav .navbar .navbar_menu .navbar_link_2 {
-      margin-right: 40px; }
+      margin-right: 40px;
+      font-weight: 500; }
       @media only screen and (max-width: 700px) {
         nav .navbar .navbar_menu .navbar_link_1,
         nav .navbar .navbar_menu .navbar_link_2 {

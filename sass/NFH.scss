@@ -32,9 +32,10 @@ nav {
             display: flex;
             align-items: center;
 
-            .navbar_link_1,
-            .navbar_link_2 {
+            .navbar_link_1 ,
+            .navbar_link_2{
                 margin-right: $fontwiegth + 15px;
+                font-weight: 500;
 
                 @media only screen and (max-width: 700px) {
                     margin-right: $fontwiegth + 1px;
@@ -46,15 +47,17 @@ nav {
 
                 }
 
-                .navbar_link_1 a:active {
+                .navbar_link_1 a:active{
 
                     color: $zra9;
+                  
 
                 }
 
-                .navbar_link_2 a:active {
+                .navbar_link_2 a:active{
 
                     color: $zra9;
+                 
 
                 }
 
