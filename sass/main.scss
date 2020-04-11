@@ -190,13 +190,26 @@ section {
 }
 
 // tile line
+.the_time_line{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div{
+        p{
+            font-size: large;
+            color: $zra9;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+    }
+}
 .time_line {
 
     margin-bottom: 40px;
 
     .time_line_1 {
 
-        margin: auto;
+        // margin: auto;
         width: 40%;
         height: 15px;
         background-color: $CHIBI;
@@ -225,8 +238,6 @@ section {
 // Question 1
 .questions {
     padding: 30px;
- 
-
     .question_1 {
         width: 60%;
         margin: auto;
@@ -307,8 +318,8 @@ section {
         height: 16px;
         background-color: $sfar;
         border-radius: 50%;
-        left: -14px;
-        top: 10.5px;
+        left: -13.3px;
+        top: 11.3px;
         opacity: 0;
 
     }
@@ -357,9 +368,5 @@ section {
 
         }
     }
-    .return{
-        opacity: 0;
-    }
 
-  
 }

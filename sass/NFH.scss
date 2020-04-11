@@ -31,6 +31,12 @@ nav {
         .navbar_menu {
             display: flex;
             align-items: center;
+            .link_1:visited{
+                color: $zra9;
+            }
+            .link_2:visited{
+                color: $zra9;
+            }
 
             .navbar_link_1 ,
             .navbar_link_2{
@@ -46,33 +52,16 @@ nav {
                     margin-right: $fontwiegth - 5px;
 
                 }
-
-                .navbar_link_1 a:active{
-
-                    color: $zra9;
-                  
-
-                }
-
-                .navbar_link_2 a:active{
-
-                    color: $zra9;
-                 
-
-                }
+              
 
                 a {
                     text-decoration: none;
                     font-size: 20px;
                     font-weight: 500;
                     color: black;
-
-
                     @media only screen and (max-width: 700px) {
                         font-size: 18px;
-
                     }
-
                     @media only screen and (max-width: 500px) {
                         font-size: 15px;
 

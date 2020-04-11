@@ -1,37 +1,48 @@
 // Store the Answers of the user 
 let Answers = {}
-// this function controle the UI 
+// this IFEE Conctrole all the UI 
 let UiControlers = (function () {
+    let the_Counter = 1;
+    // this tree function controle the UI
     function Startest() {
         IDs.section_1.style.display = "none";
         IDs.section_2.style.display = "none";
         IDs.section_A.style.display = "block";
         IDs.section_B.style.display = "block";
-        document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
     }
-
     function UiControler(num_1, num_2, num_x) {
         IDs.time_line.style.display = "block";
         IDs["Question_" + num_1].style.display = "none";
         IDs["Question_" + num_2].style.display = "block";
         IDs.line.style.animation = `move${num_x} 2s`;
         IDs.line.style.animationFillMode = "forwards"
-        document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
+        the_Counter++;
+        Counter.innerHTML= the_Counter; 
     }
-
+    // this function push the user Checks into the Object "Answers"
     function theChoice(id1, id2, Quest) {
         let OUI = document.getElementById(id1);
         let NON = document.getElementById(id2);
         if (OUI.checked) {
             Answers[Quest] = "OUI";
-
-        }
-        if (NON.checked) {
+        }else if(NON.checked) {
             Answers[Quest] = "NON";
-
         }
+    }
+    // this function show the result 
+    function TheResult () {
+        IDs.section_B.style.display = "block";
+        IDs.time_line.style.display = "none";
+        point_2.style.backgroundColor = "white";
+        point_3.style.backgroundColor = "#96C5DC";
+        IDs["Question_19"].style.display = "none";
+        IDs.Question_23.style.display = "none";
+        the_Counter = 1;
+        tittle.innerHTML = "Résultats";
+        btn_dema.innerHTML = "Répéter le test"
+        ParaForAll.innerHTML = "Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez votre température deux fois par jour. Rappel des mesures d’hygiène."
     }
     IDs.btn_1.addEventListener("click", function () {
         Startest();
@@ -43,8 +54,9 @@ let UiControlers = (function () {
         IDs.section_B.style.display = "none";
         IDs.Question_1.style.display = "block";
         IDs.time_line.style.display = "block";
-        document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
+        point_1.style.backgroundColor = "white";
+        point_2.style.backgroundColor = "#96C5DC";
     })
     IDs.Q_2.addEventListener("click", function () {
         let OUI = document.getElementById('check1');
@@ -56,9 +68,10 @@ let UiControlers = (function () {
         if (NON.checked) {
             UiControler(1, 2, " ");
             Answers.fièvre = "NON";
+            Counter_2.innerHTML = "/22";
         }
     });
-    IDs.IQ_2.addEventListener("click", function () {
+    IDs.Q_20.addEventListener("click", function () {
         if (temp.value !== "") {
             UiControler(20, 2, 2);
             Answers.température = parseInt(temp.value);
@@ -93,6 +106,7 @@ let UiControlers = (function () {
         if (NON.checked) {
             UiControler(6, 8, 7);
             Answers.fatigue = "NON";
+            Counter_2.innerHTML = "/21";
         }
     })
     IDs.Q_8.addEventListener("click", function () {
@@ -126,22 +140,22 @@ let UiControlers = (function () {
             Answers.sente = "T_MAL";
         }
     })
-    IDs.IQ_5.addEventListener("click", function () {
+    IDs.Q_23.addEventListener("click", function () {
         let age = document.getElementById("Age").value;
         Answers.age = parseInt(age);
         if (age < 15) {
-            alert(" Prenez contact avec votre médecin généraliste au moindre doute. Cette application n’est pour l’instant pas adaptée aux personnes de moins de 15 ans. En cas d’urgence, appeler le 15. ")
+            TheResult();
+            the_result_alert.innerHTML = "Prenez contact avec votre médecin généraliste au moindre doute. Cette application n’est pour l’instant pas adaptée aux personnes de moins de 15 ans. En cas d’urgence, appeler le 15. "
         } else {
             UiControler(23, 22, 12);
         }
     })
-    IDs.IQ_4.addEventListener("click", function () {
+    IDs.Q_22.addEventListener("click", function () {
         UiControler(22, 21, 13)
         let Poid = document.getElementById("POID").value;
         Answers.POID = parseInt(Poid);
-
     })
-    IDs.IQ_3.addEventListener("click", function () {
+    IDs.Q_21.addEventListener("click", function () {
         UiControler(21, 11, 14);
         let Taille = document.getElementById("taille").value;
         Answers.Taille = parseInt(Taille);
@@ -180,57 +194,6 @@ let UiControlers = (function () {
     })
     IDs.Result.addEventListener("click", function () {
         theChoice('check39', 'check20', "Traitement")
-        console.log(Answers);
-    })
-})();
-let ShowResult = (function () {
-    IDs.Result.addEventListener("click", function () {
-        Taille = (Answers.Taille) / 100;
-        let BMI = Answers.POID / (Answers.Taille * Answers.Taille);
-        if (Answers.fièvre == " OUI" || (Answers.Toux == "OUI" && Answers.mal_de_gorge == "OUI") || (Answers.Toux == "OUI" && Answers.douleurs == "OUI") || (Answers.fièvre == "OUI" && Answers.diarrhée == "OUI")) {
-            if (BMI > 18.5 && Answers.Cancer == "NON" && Answers.Maladies_chroniques == "NON" && Answers.Diabétique == "NON" && Answers.Maladie_respiratoire == "NON" && Answers.Chronique_dialysée == "NON" && Answers.M_chronique_du_foie == "NON" && Answers.Enceinte == "NON" && Answers.M_défenses_immunitaires == "NON" && Answers.Traitement == "NON") {
-                if (Answers.age < 50 && Answers.fatigue == "NON" && Answers.gêne_respiratoire == "NON" && Answers.difficultés_pour_manger == "NON" && 35.4 < Answers.température < 39 && (Answers.sente == "BIEN" || Answers.sente == "A_BIEN")) {
-                    alert("Nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’apparition de nouveaux symptômes. Vous pourrez aussi utiliser à nouveau l’application pour réévaluer vos symptômes.");
-                } else if (50 < Answers.age < 69 && Answers.gêne_respiratoire == "NON" && Answers.difficultés_pour_manger == "NON" && ((Answers.sente == "BIEN" || Answers.sente == "A_BIEN") || Answers.fatigue == "NON" || 35.4 < Answers.température < 39)) {
-                    alert("téléconsultation ou médecin généraliste ou visite à domicile ");
-                }
-            } else if (BMI <= 18.5 || Answers.Cancer == "OUI" || Answers.Maladies_chroniques == "OUI" || Answers.Diabétique == "OUI" || Answers.Maladie_respiratoire == "OUI" || Answers.Chronique_dialysée == "OUI" || Answers.M_chronique_du_foie == "OUI" || Answers.Enceinte == "OUI" || Answers.M_défenses_immunitaires == "OUI" || Answers.Traitement == "OUI") {
-                if (Answers.gêne_respiratoire == "NON" && Answers.difficultés_pour_manger == "NON" && 35.4 < Answers.température < 39 && (Answers.fatigue == "NON" && Answers.fièvre == "NON" && Answers.sente == "BIEN" && Answers.sente == "A_BIEN")) {
-                    alert("téléconsultation ou médecin généraliste ou visite à domicile ");
-                } else if ((Answers.gêne_respiratoire == "NON" && Answers.difficultés_pour_manger == "NON" && Answers.température > 35.4) && (Answers.fatigue == "OUI" || Answers.température >= 39 || Answers.fièvre == "OUI" || Answers.sente == "MAL" || Answers.sente == "T_MAL")) {
-                    alert("téléconsultation ou médecin généraliste ou visite à domicile ");
-                } else if ((Answers.gêne_respiratoire == "NON" && Answers.difficultés_pour_manger == "NON" && Answers.température > 35.4) && (Answers.fatigue == "OUI" && Answers.température >= 39) || (Answers.fièvre == "OUI" && Answers.température >= 39) || (Answers.fatigue == "OUI" && Answers.fatigue == "OUI")) {
-                    alert("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent.");
-                }
-            } else if (Answers.gêne_respiratoire == "OUI" || Answers.température <= 35.4 || Answers.difficultés_pour_manger == "OUI") {
-                alert("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent");
-            }
-        } else if (Answers.fièvre == "OUI" && Answers.Toux == "OUI") {
-            if (BMI > 18.5 && Answers.Cancer == "NON" && Answers.Maladies_chroniques == "NON" && Answers.Diabétique == "NON" && Answers.Maladie_respiratoire == "NON" && Answers.Chronique_dialysée == "NON" && Answers.M_chronique_du_foie == "NON" && Answers.Enceinte == "NON" && Answers.M_défenses_immunitaires == "NON" && Answers.Traitement == "NON") {
-                if ((Answers.gêne_respiratoire == "NON" && Answers.difficultés_pour_manger == "NON" && Answers.température > 35.4) && (Answers.fièvre == "OUI" || Answers.fatigue == "OUI" || Answers.sente == "MAL" || Answers.sente == "T_MAL") || (Answers.fièvre == "NON" && Answers.fatigue == "NON" && Answers.sente == "BIEN" && Answers.sente == "A_BIEN")) {
-                    alert(" téléconsultation ou médecin généraliste ou visite à domicile");
-                }
-            } else if (BMI <= 18.5 || Answers.Cancer == "OUI" || Answers.Maladies_chroniques == "OUI" || Answers.Diabétique == "OUI" || Answers.Maladie_respiratoire == "OUI" || Answers.Chronique_dialysée == "OUI" || Answers.M_chronique_du_foie == "OUI" || Answers.Enceinte == "OUI" || Answers.M_défenses_immunitaires == "OUI" || Answers.Traitement == "OUI") {
-                if (Answers.gêne_respiratoire == "NON" && Answers.difficultés_pour_manger == "NON" && 35.4 < Answers.température < 39 && (Answers.fatigue == "NON" && Answers.fièvre == "NON" && Answers.sente == "BIEN" && Answers.sente == "A_BIEN")) {
-                    alert("téléconsultation ou médecin généraliste ou visite à domicile ");
-                } else if ((Answers.gêne_respiratoire == "NON" && Answers.difficultés_pour_manger == "NON" && Answers.température > 35.4) && (Answers.fatigue == "OUI" || Answers.température >= 39 || Answers.fièvre == "OUI" || Answers.sente == "MAL" || Answers.sente == "T_MAL")) {
-                    alert("téléconsultation ou médecin généraliste ou visite à domicile ");
-                } else if ((Answers.gêne_respiratoire == "NON" && Answers.difficultés_pour_manger == "NON" && Answers.température > 35.4) && (Answers.fatigue == "OUI" && Answers.température >= 39) || (Answers.fièvre == "OUI" && Answers.température >= 39) || (Answers.fatigue == "OUI" && Answers.fatigue == "OUI")) {
-                    alert("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent.");
-                }
-            } else if (Answers.gêne_respiratoire == "OUI" || Answers.température <= 35.4 || Answers.difficultés_pour_manger == "OUI") {
-                alert("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent");
-            }
-
-        } else if (Answers.fièvre == "OUI" || Answers.Toux == "OUI" || Answers.mal_de_gorge == "OUI" || Answers.douleurs == "OUI") {
-            if (Answers.age < 50 && Answers.fatigue == "NON" && Answers.gêne_respiratoire == "NON" && Answers.difficultés_pour_manger == "NON" && 35.4 < Answers.température < 39 && (Answers.sente == "BIEN" || Answers.sente == "A_BIEN")) {
-                alert("Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute. ");
-            } else if (BMI < 18.5 || Answers.Cancer == "OUI" || Answers.Maladies_chroniques == "OUI" || Answers.Diabétique == "OUI" || Answers.Maladie_respiratoire == "OUI" || Answers.Chronique_dialysée == "OUI" || Answers.M_chronique_du_foie == "OUI" || Answers.Enceinte == "OUI" || Answers.M_défenses_immunitaires == "OUI" || Answers.Traitement == "OUI") {
-                alert("Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141.")
-            } else if (Answers.fièvre == "OUI" || Answers.fatigue == "OUI" || Answers.sente == "MAL" || Answers.sente == "T_MAL")
-                alert("Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141.")
-        } else {
-            alert("Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la   situation.   Pour   toute information concernant   le   Covid-19 allez vers la page d’accueil.")
-        }
+        TheResult();
     })
 })();

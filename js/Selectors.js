@@ -30,10 +30,10 @@ IDs = {
     Q_17: document.getElementById("Q_17"),
     Q_18: document.getElementById("Q_18"),
     Q_19: document.getElementById("Q_19"),
-    IQ_2: document.getElementById("IQ_2"),
-    IQ_3: document.getElementById("IQ_3"),
-    IQ_4: document.getElementById("IQ_4"),
-    IQ_5: document.getElementById("IQ_5"),
+    Q_20: document.getElementById("IQ_2"),
+    Q_21: document.getElementById("IQ_3"),
+    Q_22: document.getElementById("IQ_4"),
+    Q_23: document.getElementById("IQ_5"),
     Result: document.getElementById("Result"),
 //   Question section
     Question_1: document.getElementById("question_1"),
@@ -64,6 +64,16 @@ IDs = {
 //    input Questions
     temp: document.getElementById("temp"),
     Age: document.getElementById("Age"),
+    Counter : document.getElementById("Counter"),
+    Counter_2 : document.getElementById("Counter_2"),
+    point_3 : document.getElementById("point_3"),
+    point_2 : document.getElementById("point_2"),
+    point_1 : document.getElementById("point_1"),
+    tittle: document.getElementById("tittle"),
+    the_result_alert : document.getElementById("the_result_alert"),
+    ParaForAll : document.getElementById("ParaForAll"),
+    
+
     
 
 

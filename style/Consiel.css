@@ -25,6 +25,10 @@ nav .navbar {
   nav .navbar .navbar_menu {
     display: flex;
     align-items: center; }
+    nav .navbar .navbar_menu .link_1:visited {
+      color: #0f6894; }
+    nav .navbar .navbar_menu .link_2:visited {
+      color: #0f6894; }
     nav .navbar .navbar_menu .navbar_link_1,
     nav .navbar .navbar_menu .navbar_link_2 {
       margin-right: 40px;
@@ -37,12 +41,6 @@ nav .navbar {
         nav .navbar .navbar_menu .navbar_link_1,
         nav .navbar .navbar_menu .navbar_link_2 {
           margin-right: 20px; } }
-      nav .navbar .navbar_menu .navbar_link_1 .navbar_link_1 a:active,
-      nav .navbar .navbar_menu .navbar_link_2 .navbar_link_1 a:active {
-        color: #0f6894; }
-      nav .navbar .navbar_menu .navbar_link_1 .navbar_link_2 a:active,
-      nav .navbar .navbar_menu .navbar_link_2 .navbar_link_2 a:active {
-        color: #0f6894; }
       nav .navbar .navbar_menu .navbar_link_1 a,
       nav .navbar .navbar_menu .navbar_link_2 a {
         text-decoration: none;
