@@ -35,7 +35,30 @@ IDs = {
     Q_22: document.getElementById("IQ_4"),
     Q_23: document.getElementById("IQ_5"),
     Result: document.getElementById("Result"),
-//   Question section
+    // Back btns
+    Back_1 :document.getElementById("Back_1"),
+    Back_2 :document.getElementById("Back_2"),
+    Back_3 :document.getElementById("Back_3"),
+    Back_4 :document.getElementById("Back_4"),
+    Back_5 :document.getElementById("Back_5"),
+    Back_6 :document.getElementById("Back_6"),
+    Back_7 :document.getElementById("Back_7"),
+    Back_8 :document.getElementById("Back_8"),
+    Back_9 :document.getElementById("Back_9"),
+    Back_10 :document.getElementById("Back_10"),
+    Back_11 :document.getElementById("Back_11"),
+    Back_12 :document.getElementById("Back_12"),
+    Back_13 :document.getElementById("Back_13"),
+    Back_14 :document.getElementById("Back_14"),
+    Back_15 :document.getElementById("Back_15"),
+    Back_16 :document.getElementById("Back_16"),
+    Back_17 :document.getElementById("Back_17"),
+    Back_18 :document.getElementById("Back_18"),
+    Back_19 :document.getElementById("Back_19"),
+    Back_20:document.getElementById("Back_20"),
+    Back_21 :document.getElementById("Back_21"),
+    Back_22 :document.getElementById("Back_22"),
+    //Question section
     Question_1: document.getElementById("question_1"),
     Question_2: document.getElementById("question_2"),
     Question_3: document.getElementById("question_3"),
@@ -59,9 +82,7 @@ IDs = {
     Question_21: document.getElementById("question_I_2"),
     Question_22: document.getElementById("question_I_3"),
     Question_23: document.getElementById("question_I_4"),
-
-   
-//    input Questions
+    //input Questions
     temp: document.getElementById("temp"),
     Age: document.getElementById("Age"),
     Counter : document.getElementById("Counter"),

@@ -1,8 +1,6 @@
 @import "../sass/variable.scss";
 @import "../sass/mixins.scss";
 @import "../sass/NFH.scss";
-@import "./Animation.scss";
-
 .start {
 
     display: flex;
@@ -208,8 +206,6 @@ section {
     margin-bottom: 40px;
 
     .time_line_1 {
-
-        // margin: auto;
         width: 40%;
         height: 15px;
         background-color: $CHIBI;
@@ -220,7 +216,7 @@ section {
         }
 
         div {
-
+            width: 0;
             height: 15px;
             background-color: $zra9;
             border-radius: 20px;
