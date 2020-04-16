@@ -46,7 +46,7 @@ let UiControler = (function () {
         document.documentElement.scrollTop = 0;
     })
     let QuestNumber = 0;
-
+//  this function controle the UI 
     function UiControlers() {
         ToNext.textContent = "Question Suivente";
         document.getElementById("ShowBtn").style.display = "block"
@@ -64,33 +64,27 @@ let UiControler = (function () {
         let NON = document.getElementById("NON");
         let TheUI = theQuestions.Question_2.replace('%TheQuestion%', Questions[QuestNumber]);
         document.getElementById("All_Questions").innerHTML = TheUI;
-
         if (QuestNumber == 0) {
             let Input = theQuestions.Question_1.replace("%inout%", Questions[QuestNumber])
             Input = Input.replace("%Place%", '37°C')
             document.getElementById("All_Questions").innerHTML = Input;
-
         }
         if (QuestNumber == 2 && OUI.checked) {
             let Input = theQuestions.Question_4.replace("%inout%", Questions[QuestNumber])
             Input = Input.replace("%Place%", '37°C')
             document.getElementById("All_Questions").innerHTML = Input;
-            Answers["Answer_" + QuestNumber] = "OUI";
         } else if (QuestNumber == 2 && NON.checked) {
             let TheUI = theQuestions.Question_2.replace('%TheQuestion%', Questions[QuestNumber + 1]);
             document.getElementById("All_Questions").innerHTML = TheUI;
-            QuestNumber++
-            Answers["Answer_" + QuestNumber] = "NON";
+            QuestNumber++;
         }
         if (QuestNumber == 8 && OUI.checked) {
             let TheUI = theQuestions.Question_2.replace('%TheQuestion%', Questions[QuestNumber]);
             document.getElementById("All_Questions").innerHTML = TheUI;
-            Answers["Answer_" + 8] = "OUI";
         } else if (QuestNumber == 8 && NON.checked) {
             let TheUI = theQuestions.Question_2.replace('%TheQuestion%', Questions[QuestNumber + 1]);
             document.getElementById("All_Questions").innerHTML = TheUI;
-            QuestNumber++
-            Answers["Answer_" + 8] = "NON";
+            QuestNumber++;
         }
         if (QuestNumber == 11) {
             let TheUI = theQuestions.Question_3.replace('%TheQuestion%', "qkerjgkr");
@@ -102,8 +96,9 @@ let UiControler = (function () {
             document.getElementById("All_Questions").innerHTML = Input;
         }
     }
+    // this function push the user choise into an array (Answers)
     function TheChoice() {
-        if (QuestNumber !== 3 && QuestNumber !== 0 && QuestNumber !== 2 && QuestNumber !== 1 && QuestNumber !== 12 && QuestNumber !== 14 && QuestNumber !== 13) {
+        if (QuestNumber !== 3 && QuestNumber !== 0 &&  QuestNumber !== 1 && QuestNumber !== 12 && QuestNumber !== 14 && QuestNumber !== 13) {
             if (OUI.checked) {
                 Answers["Answer_" + QuestNumber] = "OUI";
 
@@ -123,20 +118,20 @@ let UiControler = (function () {
             } else {
                 Answers["Answer_12"] = "T_MAL";
             }
-        } else if (QuestNumber == 1) {
-            Answers["Answer_" + 1] = parseInt(document.getElementById("Age").value);
-        }else if (QuestNumber == 13) {
-            Answers["Answer_13"] = parseInt(document.getElementById("Age").value);
-        }else if (QuestNumber == 14) {
-            Answers["Answer_14"] = parseInt(document.getElementById("Age").value);
-        }else if (QuestNumber == 3) {
-            Answers["Answer_3" ] = parseInt(document.getElementById("Age").value);
+        } else if (QuestNumber == 1 || QuestNumber == 13 || QuestNumber == 14 || QuestNumber == 3) {
+            Answers["Answer_" + QuestNumber] = parseInt(document.getElementById("Age").value);
         }
+      
     }
     ToNext.addEventListener("click", function () {
         TheChoice();
         UiControlers();
+        if (QuestNumber == 23){
+            const Ann = Object.values(Answers)
+            console.log(Ann)
+        }
         QuestNumber++;
+        
     });
     ToBack.addEventListener("click", function () {
         UiControlers();
@@ -146,4 +141,6 @@ let UiControler = (function () {
         document.getElementById("Counter").innerHTML = QuestNumber;
     }, 10)
 })()
-console.log(Answers)
+console.log(Answers);
+  
+  

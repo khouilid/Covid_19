@@ -1,7 +1,7 @@
 let ShowResult = (function () {
     IDs.Result.addEventListener("click", function () {
         Taille = (Answers.Taille) / 100;
-        let BMI = Answers.POID / (Taille * Taille);
+        let BMI = Answers.POID / (Taille * Taille);             
         if (Answers.fièvre == " OUI" || (Answers.Toux == "OUI" && Answers.mal_de_gorge == "OUI") || (Answers.Toux == "OUI" && Answers.douleurs == "OUI") || (Answers.fièvre == "OUI" && Answers.diarrhée == "OUI")) {
             if (BMI > 18.5 && Answers.Cancer == "NON" && Answers.Maladies_chroniques == "NON" && Answers.Diabétique == "NON" && Answers.Maladie_respiratoire == "NON" && Answers.Chronique_dialysée == "NON" && Answers.M_chronique_du_foie == "NON" && Answers.Enceinte == "NON" && Answers.M_défenses_immunitaires == "NON" && Answers.Traitement == "NON") {
                 if (Answers.age < 50 && Answers.fatigue == "NON" && Answers.gêne_respiratoire == "NON" && Answers.difficultés_pour_manger == "NON" && 35.4 < Answers.température < 39 && (Answers.sente == "BIEN" || Answers.sente == "A_BIEN")) {
