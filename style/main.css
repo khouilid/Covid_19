@@ -541,3 +541,5 @@ section .info_str button {
       .btns .btn_next button {
         font-size: medium;
         width: 100%; } }
+  .btns .return {
+    display: none; }

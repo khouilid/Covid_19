@@ -274,12 +274,10 @@ section {
 .radio_G {
     width: 40%;
     margin: auto;
-
     @media only screen and (max-width: 700px) {
         width: 50%;
 
     }
-
     .option {
         position: relative;
 
@@ -294,7 +292,6 @@ section {
             margin-left: 20px;
         }
     }
-
     .option label::after {
         position: absolute;
         content: "";
@@ -363,6 +360,9 @@ section {
             width: 100%;
 
         }
+    }
+    .return{
+        display: none;
     }
 
 }
