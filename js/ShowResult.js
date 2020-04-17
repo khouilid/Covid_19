@@ -61,3 +61,44 @@ let ShowResult = (function () {
         }
     })
 })();
+
+
+
+
+
+
+
+
+if (Answers.Other.Answer_2 == "OUI" || (Answers.Other.Answer_4 == "OUI" && Answers.Other.Answer_6 == "OUI") || (Answers.Other.Answer_4 == "OUI" && Answers.Other.Answer_5 == "OUI") || (Answers.Other.Answer_2 == "OUI" && Answers.Other.Answer_7 == "OUI")) {
+    if (AnswerS[0].lenght == 0) {
+        if (Answers.Other.Answer_1 < 50 && AnswerS[1].lenght == 0 && AnswerS[2].lenght == 0) {
+            alert("nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’apparition de nouveaux symptômes. Vous pourrez aussi utiliser à nouveau l’application pour réévaluer vos symptômes. ");
+        } else if (Answers.Other.Answer_1 > 50 && Answers.Other.Answer_1 < 69 && AnswerS[1].lenght == 0 && AnswerS[2].lenght >= 1) {
+            alert("téléconsultation ou médecin généraliste ou visite à domicile");
+        }
+    } else if (AnswerS[0].lenght >= 1) {
+        if (AnswerS[1].lenght == 0 && (AnswerS[2].lenght == 0 || AnswerS[2].lenght == 1)) {
+            alert(" téléconsultation ou médecin généraliste ou visite à domicile ");
+        } else if (AnswerS[1].lenght == 0 && AnswerS[2].lenght >= 2) {
+            alert("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent.");
+        }
+    } else if (AnswerS[1].lenght >= 1) {
+        alert("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent.");
+    }
+}else if (Answers.Other.Answer_2 == "OUI" && Answers.Other.Answer_4 == "OUI") {
+    if ((AnswerS[0].lenght == 0 && AnswerS[1].lenght == 0) || (AnswerS[0].lenght !== 0 && (AnswerS[2].lenght == 1 || AnswerS[2].lenght == 0))) {
+        alert("téléconsultation ou médecin généraliste ou visite à domicile ");
+    } else if (AnswerS[0].lenght >= 1 && AnswerS[1].lenght == 0 && AnswerS[2].lenght >= 2) {
+        alert("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent.");
+    } else if (AnswerS[1].lenght >= 1) {
+        alert("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent.");
+    }
+}else if (Answers.Other.Answer_2 == "OUI" || Answers.Other.Answer_4 == "OUI" || Answers.Other.Answer_6 == "OUI" || Answers.Other.Answer_7 == "OUI") {
+    if (AnswerS[0].lenght == 0 && AnswerS[1].lenght == 0 && AnswerS[2].lenght == 0) {
+        alert("Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute.");
+    } else if (AnswerS[0].lenght = 1 || AnswerS[2].lenght >= 1) {
+        alert("Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141.");
+    }
+}else if (AnswerS[0].lenght == 0 && AnswerS[1].lenght == 0 && AnswerS[2].lenght == 0) {
+    alert("Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la   situation.   Pour   toute information concernant   le   Covid-19 allez vers la page d’accueil. ");
+}

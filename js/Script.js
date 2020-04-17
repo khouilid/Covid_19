@@ -4,19 +4,18 @@ Answers = {
     FactMineur: {},
     Other: {},
 }
+let AnswerS;
 let UiControler = (function () {
     let ToNext = document.getElementById("ToNext");
     let ToBack = document.getElementById("ToBack");
     // let Demarer_Test = document.getElementById("Demarer_Test");
     let StartTeTest = document.getElementById("StartTeTest");
     let theQuestions = {
-        Question_1: `<div class="questions"><div class="question_1"><h1>Quel est votre âge ? </h1></div><div class="input_Q"><input type="text" id="Age"  placeholder="27 Ans"></div></div><div class="notiv" id="notification"><p>La prise d'anti-inflammatoires (ibuprofène, cortisone ...) pourrait être un facteur d'aggravation del’infection. En cas de fièvre, prenez du paracétamol. Cette remarque concerte les traitements pargélules ou comprimés et ne concerne pas les formes inhalées. Si vous êtes déjà sous traitement, n'arrêtez pas ce traitement, demandez l'avis de votre médecin ou de votre pharmacien. </p></div>`,
+        Question_1: `<div class="questions"><div class="question_1"><h1>%inout%</h1></div><div class="input_Q"><input type="text" id="Age"  placeholder="Enter the Value ..."></div></div><div class="notiv" id="notification"><p>La prise d'anti-inflammatoires (ibuprofène, cortisone ...) pourrait être un facteur d'aggravation del’infection. En cas de fièvre, prenez du paracétamol. Cette remarque concerte les traitements pargélules ou comprimés et ne concerne pas les formes inhalées. Si vous êtes déjà sous traitement, n'arrêtez pas ce traitement, demandez l'avis de votre médecin ou de votre pharmacien. </p></div>`,
         // for the 17 other Questions
-        Question_2: '<div class="questions"><div class="question_1"><h1>%TheQuestion%</h1></div><div class="radio_G"><div class="option"><input type="radio" id="OUI" name="check3" checked/><label for="OUI"> OUI</label></div><div class="option"><input type="radio" id="NON" name="check3" /><label for="NON"> NON</label></div></div></div>',
+        Question_2: '<div class="questions"><div class="question_1"><h1>%TheQuestion%</h1></div><div class="radio_G"><div class="option"><input type="radio" id="OUI" name="check3"/><label for="OUI"> OUI</label></div><div class="option"><input type="radio" id="NON" name="check3"  checked/><label for="NON"> NON</label></div></div></div>',
         // for the 4 option question
         Question_3: '<div class="questions"><div class="question_1"><h1>Comment vous sentez-vous ?</h1></div><div class="radio_G"><div class="option"><input type="radio" id="Option1" name="check11" checked/><label for="Option1"> Bien</label></div><div class="option"><input type="radio" id="Option2" name="check11" /><label for="Option2">Assez bien</label></div><div class="option"><input type="radio" id="Option3" name="check11" /><label for="Option3">Mal</label></div><div class="option"><input type="radio" id="Option4" name="check11" /><label for="Option4">très mal</label></div></div></div>',
-        // for the input 
-        Question_4: '<div class="questions"><div class="question_1"><h1>%inout%</h1></div><div class="input_Q"><input type="text" id="Age"  placeholder="%Place%"></div></div><div class="btns">',
     }
     // the Questions
     let Questions = ["Quel est votre âge ?",
@@ -68,15 +67,11 @@ let UiControler = (function () {
         let NON = document.getElementById("NON");
         let TheUI = theQuestions.Question_2.replace('%TheQuestion%', Questions[QuestNumber]);
         document.getElementById("All_Questions").innerHTML = TheUI;
-        if (QuestNumber == 0) {
-            let Input = theQuestions.Question_1.replace("%inout%", Questions[QuestNumber])
-            Input = Input.replace("%Place%", '37°C')
-            document.getElementById("All_Questions").innerHTML = Input;
-        }
         if (QuestNumber == 2 && OUI.checked) {
-            let Input = theQuestions.Question_4.replace("%inout%", Questions[QuestNumber])
-            Input = Input.replace("%Place%", '37°C')
+            let Input = theQuestions.Question_1.replace("%inout%", Questions[QuestNumber])
+
             document.getElementById("All_Questions").innerHTML = Input;
+            document.getElementById("notification").style.display = "none"
         } else if (QuestNumber == 2 && NON.checked) {
             let TheUI = theQuestions.Question_2.replace('%TheQuestion%', Questions[QuestNumber + 1]);
             document.getElementById("All_Questions").innerHTML = TheUI;
@@ -91,14 +86,20 @@ let UiControler = (function () {
             QuestNumber++;
         }
         if (QuestNumber == 11) {
-            let TheUI = theQuestions.Question_3.replace('%TheQuestion%', "qkerjgkr");
-            document.getElementById("All_Questions").innerHTML = TheUI;
+            document.getElementById("All_Questions").innerHTML = theQuestions.Question_3;
         }
-        if (QuestNumber == 12 || QuestNumber == 13) {
-            let Input = theQuestions.Question_4.replace("%inout%", Questions[QuestNumber])
-            Input = Input.replace("%Place%", 'Enter the Value ...')
+        if (QuestNumber == 12 || QuestNumber == 13 || QuestNumber == 0) {
+            let Input = theQuestions.Question_1.replace("%inout%", Questions[QuestNumber])
             document.getElementById("All_Questions").innerHTML = Input;
+            if (QuestNumber !== 0) {
+                document.getElementById("notification").style.display = "none"
+            }
         }
+    } 
+    function UiResult(para) {
+        let UI = '<div class="information"><h1 id="tittle">Résultats</h1><p class="information_1" id="the_result_alert">%theResul%</p><div class="information_line"></div><p id="ParaForAll">  Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez votre température deux fois par jour. Rappel des mesures d’hygiène.  </p></div>'
+        TheU = UI.replace("%theResul%", para);
+        document.getElementById("All_Questions").innerHTML = TheU;
     }
     // this function push the user choise into an array (Answers)
     function TheChoice() {
@@ -106,7 +107,7 @@ let UiControler = (function () {
             if (OUI.checked) {
                 Answers.FactPronistique["Answer_" + QuestNumber] = "OUI";
             } else if (NON.checked) {
-                Answers.FactPronistique["Answer_" + QuestNumber] = "NON";
+                Answers.Other["Answer_" + QuestNumber] = "NON";
             }
         } else if (QuestNumber == 12) {
             let Option_1 = document.getElementById("Option1");
@@ -126,7 +127,9 @@ let UiControler = (function () {
             let InputS = parseInt(document.getElementById("Age").value);
             Answers.Other["Answer_" + QuestNumber] = InputS;
             if (QuestNumber == 1 && InputS < 15) {
-                alert(" Prenez contact avec votre médecin généraliste au moindre doute. Cette application n’est pour l’instant pas adaptée aux personnes de moins de 15 ans. En cas d’urgence, appeler le 15. ")
+                document.getElementById("time_line").style.display = "none";
+                UiResult("Prenez contact avec votre médecin généraliste au moindre doute. Cette application n’est pour l’instant pas adaptée aux personnes de moins de 15 ans. En cas d’urgence, appeler le 15. ");
+                
             }
         } else if (QuestNumber == 3) {
             let InputS = parseInt(document.getElementById("Age").value);
@@ -157,48 +160,69 @@ let UiControler = (function () {
                 Answers.Other["Answer_" + QuestNumber] = "NON";
             }
         }
+        if (QuestNumber == 23) {
+            AnswerS = Object.values(Answers)
+            for (let i = 0; i < 4; i++) {
+                AnswerS[i] = Object.values(AnswerS[i])
+            }
+            console.log(Answers)
+            ShowResult();
+        }
+    }
+    
+    function ShowResult() {
+        if (Answers.Other.Answer_2 == "OUI" || (Answers.Other.Answer_4 == "OUI" && Answers.Other.Answer_6 == "OUI") || (Answers.Other.Answer_4 == "OUI" && Answers.Other.Answer_5 == "OUI") || (Answers.Other.Answer_2 == "OUI" && Answers.Other.Answer_7 == "OUI")) {
+            if (AnswerS[0] == 0) {
+                if (AnswerS[1] == 0 && AnswerS[2] == 0 && Answers.Other.Answer_1 < 50) {
+                    UiResult("nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’apparition de nouveaux symptômes. Vous pourrez aussi utiliser à nouveau l’application pour réévaluer vos symptômes. ")
+                } else if (AnswerS[1] == 0 && (Answers.Other.Answer_1 >= 50 && Answers.Other.Answer_1 <= 69)) {
+                    UiResult("téléconsultation ou médecin généraliste ou visite à domicile")
+                }
+            } else if (AnswerS[0] >= 1) {
+                if ((AnswerS[1] == 0 && AnswerS[2] == 0) || (AnswerS[1] == 0 && AnswerS[2] == 1)) {
+                    UiResult("téléconsultation ou médecin généraliste ou visite à domicile")
+                }
+            }
+            if (AnswerS[1] >= 1) {
+                UiResult("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent")
+            }
+        } else if (Answers.Other.Answer_2 == "OUI" && Answers.Other.Answer_4 == "OUI") {
+            if (AnswerS[0] == 0) {
+                if (AnswerS[1] == 0 && AnswerS[2] >= 1) {
+                    UiResult(" téléconsultation ou médecin généraliste ou visite à domicile ")
+                }
+            } else if (AnswerS[0] !== 0) {
+                if (AnswerS[1] == 0 && AnswerS[2] >= 2) {
+                    UiResult("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent")
+                } else {
+                    UiResult(" téléconsultation ou médecin généraliste ou visite à domicile ")
+                }
+
+            } else if (AnswerS[1] >= 1) {
+                UiResult("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent")
+            }
+        } else if (Answers.Other.Answer_2 == "OUI" || Answers.Other.Answer_4 == "OUI" || Answers.Other.Answer_6 == "OUI" || Answers.Other.Answer_7 == "OUI") {
+            if (AnswerS[1] == 0 && AnswerS[2] == 0) {
+                UiResult("Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute. ")
+            } else if (AnswerS[0] !== 0 || AnswerS[1] !== 0 || AnswerS[2] !== 0) {
+                UiResult(" Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141. ")
+            }
+        } else {
+            UiResult("Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la   situation.   Pour   toute information concernant   le   Covid-19 allez vers la page d’accueil.")
+        }
     }
     ToNext.addEventListener("click", function () {
         TheChoice();
         UiControlers();
         // Switch Object Answers into an array
-        if (QuestNumber == 23) {
-            const AnswerS = Object.values(Answers)
-            for (let i = 0; i < 4; i++) {
-                AnswerS[i] = Object.values(AnswerS[i])
-            }
-            console.log(AnswerS)
-            ShowResult();
-        }
         QuestNumber++;
     });
     ToBack.addEventListener("click", function () {
-        UiControlers();
-        QuestNumber--;
+ UiResult("Prenez contact avec votre médecin généraliste au moindre doute. Cette application n’est pour l’instant pas adaptée aux personnes de moins de 15 ans. En cas d’urgence, appeler le 15. ")
+        // UiControlers();
+        // QuestNumber--;
     })
     setInterval(function () {
         document.getElementById("Counter").innerHTML = QuestNumber;
     }, 10)
 })()
-function ShowResult() {
-    if (Answers.Answer_1 <= 15) {
-        if (Answers.Answer_2 == "OUI" || (Answers.Answer_4 == "OUI" && Answers.Answer_6 == "OUI") || (Answers.Answer_4 == "OUI" && Answers.Answer_5 == "OUI") || (Answers.Answer_2 == "OUI" && Answers.Answer_7 == "OUI")) {
-            if (AnswerS[0].lenght == 0) {
-                if (Answers.Answer_1 < 50 && AnswerS[1].lenght == 0 && AnswerS[2].lenght == 0) {
-                    alert("nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’apparition de nouveaux symptômes. Vous pourrez aussi utiliser à nouveau l’application pour réévaluer vos symptômes. ")
-                } else if (Answers.Answer_1 > 50 && Answers.Answer_1 < 69 && AnswerS[1].lenght == 0 && (AnswerS[2].lenght == 0 || AnswerS[2].lenght < 1)) {
-                    alert("téléconsultation ou médecin généraliste ou visite à domicile")
-                }
-            } else if (AnswerS[0].lenght !== 0) {
-                if (AnswerS[1].lenght == 0 && (AnswerS[2].lenght == 0 || AnswerS[2].lenght == 1)) {
-                    alert(" téléconsultation ou médecin généraliste ou visite à domicile ")
-                } else if (AnswerS[1].lenght == 0 && AnswerS[2].lenght <= 2) {
-                    alert("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent.")
-                }
-            } else if (AnswerS[1].lenght <= 1) {
-                alert("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent.")
-            }
-        }
-
-    }
-}
