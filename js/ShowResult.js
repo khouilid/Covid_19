@@ -11,52 +11,39 @@ let ShowResult = (function () {
                 }
             } else if (BMI <= 18.5 || Answers.Cancer == "OUI" || Answers.Maladies_chroniques == "OUI" || Answers.Diabétique == "OUI" || Answers.Maladie_respiratoire == "OUI" || Answers.Chronique_dialysée == "OUI" || Answers.M_chronique_du_foie == "OUI" || Answers.Enceinte == "OUI" || Answers.M_défenses_immunitaires == "OUI" || Answers.Traitement == "OUI") {
                 if (Answers.gêne_respiratoire == "NON" && Answers.difficultés_pour_manger == "NON" && 35.4 < Answers.température < 39 && (Answers.fatigue == "NON" && Answers.fièvre == "NON" && Answers.sente == "BIEN" && Answers.sente == "A_BIEN")) {
-
                     the_result_alert.innerHTML = "téléconsultation ou médecin généraliste ou visite à domicile "
                 } else if ((Answers.gêne_respiratoire == "NON" && Answers.difficultés_pour_manger == "NON" && Answers.température > 35.4) && (Answers.fatigue == "OUI" || Answers.température >= 39 || Answers.fièvre == "OUI" || Answers.sente == "MAL" || Answers.sente == "T_MAL")) {
-
                     the_result_alert.innerHTML = "téléconsultation ou médecin généraliste ou visite à domicile "
                 } else if ((Answers.gêne_respiratoire == "NON" && Answers.difficultés_pour_manger == "NON" && Answers.température > 35.4) && (Answers.fatigue == "OUI" && Answers.température >= 39) || (Answers.fièvre == "OUI" && Answers.température >= 39) || (Answers.fatigue == "OUI" && Answers.fatigue == "OUI")) {
-
                     the_result_alert.innerHTML = "appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent."
                 }
             } else if (Answers.gêne_respiratoire == "OUI" || Answers.température <= 35.4 || Answers.difficultés_pour_manger == "OUI") {
-
                 the_result_alert.innerHTML = "appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent"
             }
         } else if (Answers.fièvre == "OUI" && Answers.Toux == "OUI") {
             if (BMI > 18.5 && Answers.Cancer == "NON" && Answers.Maladies_chroniques == "NON" && Answers.Diabétique == "NON" && Answers.Maladie_respiratoire == "NON" && Answers.Chronique_dialysée == "NON" && Answers.M_chronique_du_foie == "NON" && Answers.Enceinte == "NON" && Answers.M_défenses_immunitaires == "NON" && Answers.Traitement == "NON") {
                 if ((Answers.gêne_respiratoire == "NON" && Answers.difficultés_pour_manger == "NON" && Answers.température > 35.4) && (Answers.fièvre == "OUI" || Answers.fatigue == "OUI" || Answers.sente == "MAL" || Answers.sente == "T_MAL") || (Answers.fièvre == "NON" && Answers.fatigue == "NON" && Answers.sente == "BIEN" && Answers.sente == "A_BIEN")) {
-
                     the_result_alert.innerHTML = "téléconsultation ou médecin généraliste ou visite à domicile"
                 }
             } else if (BMI <= 18.5 || Answers.Cancer == "OUI" || Answers.Maladies_chroniques == "OUI" || Answers.Diabétique == "OUI" || Answers.Maladie_respiratoire == "OUI" || Answers.Chronique_dialysée == "OUI" || Answers.M_chronique_du_foie == "OUI" || Answers.Enceinte == "OUI" || Answers.M_défenses_immunitaires == "OUI" || Answers.Traitement == "OUI") {
                 if (Answers.gêne_respiratoire == "NON" && Answers.difficultés_pour_manger == "NON" && 35.4 < Answers.température < 39 && (Answers.fatigue == "NON" && Answers.fièvre == "NON" && Answers.sente == "BIEN" && Answers.sente == "A_BIEN")) {
-
                     the_result_alert.innerHTML = "téléconsultation ou médecin généraliste ou visite à domicile"
                 } else if ((Answers.gêne_respiratoire == "NON" && Answers.difficultés_pour_manger == "NON" && Answers.température > 35.4) && (Answers.fatigue == "OUI" || Answers.température >= 39 || Answers.fièvre == "OUI" || Answers.sente == "MAL" || Answers.sente == "T_MAL")) {
-
                     the_result_alert.innerHTML = "téléconsultation ou médecin généraliste ou visite à domicile "
                 } else if ((Answers.gêne_respiratoire == "NON" && Answers.difficultés_pour_manger == "NON" && Answers.température > 35.4) && (Answers.fatigue == "OUI" && Answers.température >= 39) || (Answers.fièvre == "OUI" && Answers.température >= 39) || (Answers.fatigue == "OUI" && Answers.fatigue == "OUI")) {
-
                     the_result_alert.innerHTML = "appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent.";
                 }
             } else if (Answers.gêne_respiratoire == "OUI" || Answers.température <= 35.4 || Answers.difficultés_pour_manger == "OUI") {
                 the_result_alert.innerHTML = "appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent.";
             }
-
         } else if (Answers.fièvre == "OUI" || Answers.Toux == "OUI" || Answers.mal_de_gorge == "OUI" || Answers.douleurs == "OUI") {
             if (Answers.age < 50 && Answers.fatigue == "NON" && Answers.gêne_respiratoire == "NON" && Answers.difficultés_pour_manger == "NON" && 35.4 < Answers.température < 39 && (Answers.sente == "BIEN" || Answers.sente == "A_BIEN")) {
-
                 the_result_alert.innerHTML = "Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute. ";
             } else if (BMI < 18.5 || Answers.Cancer == "OUI" || Answers.Maladies_chroniques == "OUI" || Answers.Diabétique == "OUI" || Answers.Maladie_respiratoire == "OUI" || Answers.Chronique_dialysée == "OUI" || Answers.M_chronique_du_foie == "OUI" || Answers.Enceinte == "OUI" || Answers.M_défenses_immunitaires == "OUI" || Answers.Traitement == "OUI") {
-
                 the_result_alert.innerHTML = "Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141."
             } else if (Answers.fièvre == "OUI" || Answers.fatigue == "OUI" || Answers.sente == "MAL" || Answers.sente == "T_MAL")
-
                 the_result_alert.innerHTML = "Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141."
         } else {
-
             the_result_alert.innerHTML = "Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la   situation.   Pour   toute information concernant   le   Covid-19 allez vers la page d’accueil.";
         }
     })
@@ -69,36 +56,87 @@ let ShowResult = (function () {
 
 
 
+
+
+
 if (Answers.Other.Answer_2 == "OUI" || (Answers.Other.Answer_4 == "OUI" && Answers.Other.Answer_6 == "OUI") || (Answers.Other.Answer_4 == "OUI" && Answers.Other.Answer_5 == "OUI") || (Answers.Other.Answer_2 == "OUI" && Answers.Other.Answer_7 == "OUI")) {
-    if (AnswerS[0].lenght == 0) {
-        if (Answers.Other.Answer_1 < 50 && AnswerS[1].lenght == 0 && AnswerS[2].lenght == 0) {
-            alert("nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’apparition de nouveaux symptômes. Vous pourrez aussi utiliser à nouveau l’application pour réévaluer vos symptômes. ");
-        } else if (Answers.Other.Answer_1 > 50 && Answers.Other.Answer_1 < 69 && AnswerS[1].lenght == 0 && AnswerS[2].lenght >= 1) {
-            alert("téléconsultation ou médecin généraliste ou visite à domicile");
+    if (Fact_P_Num.length == 0) {
+        if (Fact_M_Num.length == 0 && Fact_N_Num.length == 0 && Answers.Other.Answer_1 < 50) {
+            alert("nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’apparition de nouveaux symptômes. Vous pourrez aussi utiliser à nouveau l’application pour réévaluer vos symptômes. ")
+        } else if (Fact_M_Num.length == 0 && (Answers.Other.Answer_1 >= 50 && Answers.Other.Answer_1 <= 69)) {
+            alert("téléconsultation ou médecin généraliste ou visite à domicile")
         }
-    } else if (AnswerS[0].lenght >= 1) {
-        if (AnswerS[1].lenght == 0 && (AnswerS[2].lenght == 0 || AnswerS[2].lenght == 1)) {
-            alert(" téléconsultation ou médecin généraliste ou visite à domicile ");
-        } else if (AnswerS[1].lenght == 0 && AnswerS[2].lenght >= 2) {
-            alert("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent.");
+    } else if (Fact_P_Num.length !== 1) {
+        if ((Fact_M_Num.length == 0 && Fact_N_Num.length == 0) || (Fact_M_Num.length == 0 && Fact_N_Num.length == 1)) {
+            alert("téléconsultation ou médecin généraliste ou visite à domicile")
         }
-    } else if (AnswerS[1].lenght >= 1) {
-        alert("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent.");
+    } else if (Fact_M_Num.length !== 0 && (Fact_P_Num.length == 0 || Fact_P_Num.length !== 0)) {
+        alert("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent")
     }
-}else if (Answers.Other.Answer_2 == "OUI" && Answers.Other.Answer_4 == "OUI") {
-    if ((AnswerS[0].lenght == 0 && AnswerS[1].lenght == 0) || (AnswerS[0].lenght !== 0 && (AnswerS[2].lenght == 1 || AnswerS[2].lenght == 0))) {
-        alert("téléconsultation ou médecin généraliste ou visite à domicile ");
-    } else if (AnswerS[0].lenght >= 1 && AnswerS[1].lenght == 0 && AnswerS[2].lenght >= 2) {
-        alert("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent.");
-    } else if (AnswerS[1].lenght >= 1) {
-        alert("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent.");
+} else if (Answers.Other.Answer_2 == "OUI" && Answers.Other.Answer_4 == "OUI") {
+    if (Fact_P_Num.length == 0) {
+        if (Fact_M_Num.length == 0 && Fact_N_Num.length >= 0) {
+            alert(" téléconsultation ou médecin généraliste ou visite à domicile ")
+        }
+    } else if (Fact_P_Num.length !== 0) {
+        if (Fact_M_Num.length == 0 && Fact_N_Num.length >= 2) {
+            alert("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent")
+        } else {
+            alert(" téléconsultation ou médecin généraliste ou visite à domicile ")
+        }
+    } else if (Fact_M_Num.length >= 1) {
+        alert("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent")
     }
-}else if (Answers.Other.Answer_2 == "OUI" || Answers.Other.Answer_4 == "OUI" || Answers.Other.Answer_6 == "OUI" || Answers.Other.Answer_7 == "OUI") {
-    if (AnswerS[0].lenght == 0 && AnswerS[1].lenght == 0 && AnswerS[2].lenght == 0) {
-        alert("Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute.");
-    } else if (AnswerS[0].lenght = 1 || AnswerS[2].lenght >= 1) {
-        alert("Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141.");
+} else if (Answers.Other.Answer_2 == "OUI" || Answers.Other.Answer_4 == "OUI" || Answers.Other.Answer_6 == "OUI" || Answers.Other.Answer_7 == "OUI") {
+    if (Fact_M_Num.length == 0 && Fact_N_Num.length == 0) {
+        alert("Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute. ")
+    } else if (Fact_P_Num.length !== 0 || Fact_M_Num.length !== 0 || Fact_N_Num.length !== 0) {
+        alert(" Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141. ")
     }
-}else if (AnswerS[0].lenght == 0 && AnswerS[1].lenght == 0 && AnswerS[2].lenght == 0) {
-    alert("Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la   situation.   Pour   toute information concernant   le   Covid-19 allez vers la page d’accueil. ");
+} else if ( Fact_P_Num.length == 0 && Fact_N_Num.length == 0 && Fact_M_Num.length == 0){
+    alert("Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la   situation.   Pour   toute information concernant   le   Covid-19 allez vers la page d’accueil.")
+}
+
+
+
+
+
+
+
+if (Answers.Other.Answer_2 == "OUI" || (Answers.Other.Answer_4 == "OUI" && Answers.Other.Answer_6 == "OUI") || (Answers.Other.Answer_4 == "OUI" && Answers.Other.Answer_5 == "OUI") || (Answers.Other.Answer_2 == "OUI" && Answers.Other.Answer_7 == "OUI")) {
+    if (Fact_P_Num.lenght == 0) {
+        if (Fact_N_Num.lenght == 0 && Fact_M_Num.lenght == 0 && Answers.Other.Answer_1 < 50) {
+            alert(" nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’apparition de nouveaux symptômes. Vous pourrez aussi utiliser à nouveau l’application pour réévaluer vos symptômes. ")
+        } else if ((Fact_N_Num.lenght == 0 || Fact_N_Num.lenght !== 0) && Fact_M_Num.lenght == 0 && Answers.Other.Answer_1 > 50 && Answers.Other.Answer_1 < 69) {
+            alert("téléconsultation ou médecin généraliste ou visite à domicile ")
+        }
+    } else if (Fact_P_Num.lenght !== 0) {
+        if ((Fact_N_Num.lenght == 0 && Fact_M_Num.lenght == 0 )|| (Fact_N_Num.lenght == 1 && Fact_M_Num.lenght == 0)) {
+            alert(" téléconsultation ou médecin généraliste ou visite à domicile ")
+        }else if (Fact_N_Num.lenght > 1 && Fact_M_Num.lenght == 0) {
+            alert("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent")
+        }
+    } else if (Fact_M_Num.lenght >= 1) {
+        alert("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent")
+    }
+} else if (Answers.Other.Answer_2 == "OUI" && Answers.Other.Answer_4 == "OUI") {
+    if (Fact_P_Num.lenght == 0 && Fact_M_Num.lenght == 0) {
+        alert(" téléconsultation ou médecin généraliste ou visite à domicile  ")
+    } else if (Fact_P_Num.lenght >= 1) {
+        if ((Fact_N_Num.lenght == 0 && Fact_M_Num.lenght == 0 ) || (Fact_N_Num.lenght == 1 && Fact_M_Num.lenght == 0)) {
+            alert("téléconsultation ou médecin généraliste ou visite à domicile")
+        }else if (Fact_N_Num.lenght >= 2 && Fact_M_Num.lenght == 0) {
+            alert("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent")
+        }
+    }else if (Fact_M_Num.lenght >= 1){
+        alert("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent")
+    }
+}else if (Answers.Other.Answer_2 == "OUI" || Answers.Other.Answer_4 == "OUI" || Answers.Other.Answer_6 == "OUI" || Answers.Other.Answer_5 == "OUI"){
+    if(Fact_M_Num.lenght == 0 && Fact_N_Num.lenght == 0){
+        alert("Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute.")
+    }else if(Fact_N_Num.lenght >= 1 || Fact_M_Num.lenght >= 1 || Fact_P_Num.lenght == 1 ){
+        alert("Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141. ")
+    }
+}else if (Answers.Other.Answer_2 == "NON" && Answers.Other.Answer_4 == "NON" &&Answers.Other.Answer_5 == "NON" && Answers.Other.Answer_6 == "NON" && Answers.Other.Answer_7 == "NON" && Answers.Other.Answer_8 == "NON" && Answers.Other.Answer_10 == "NON" && Answers.Other.Answer_11 == "NON"){
+    alert("Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la   situation.   Pour   toute information concernant   le   Covid-19 allez vers la page d’accueil.")
 }
