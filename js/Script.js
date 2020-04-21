@@ -14,8 +14,6 @@ function TheUiResult(Reso) {
     document.getElementById("point_3").style.backgroundColor = "#96C5DC";
     document.getElementById("ShowBtn").style.display = "none"
     ToNext.textContent = "Répéter le test";
-    QuestNumber == 0;
-    // alert("jhg")
 }
 let ToNext = document.getElementById("ToNext");
 let ToBack = document.getElementById("ToBack");
@@ -63,6 +61,7 @@ StartTeTest.addEventListener("click", function () {
 let QuestNumber = 0;
 //  this function controle the UI 
 function UiControlers() {
+    document.documentElement.scrollTop = 0;
     ToNext.textContent = "Question Suivente";
     document.getElementById("time_line").style.display = "block";
     document.getElementById("point_1").style.backgroundColor = "white";
@@ -73,13 +72,10 @@ function UiControlers() {
         duration: 1000,
         fill: "forwards"
     });
-    document.documentElement.scrollTop = 0;
     let OUI = document.getElementById("OUI");
     let NON = document.getElementById("NON");
     let TheUI = theQuestions.Question_2.replace('%TheQuestion%', Questions[QuestNumber]);
     document.getElementById("All_Questions").innerHTML = TheUI;
-    console.log(QuestNumber)
-
     if (QuestNumber == 2 && OUI.checked) {
         let Input = theQuestions.Question_1.replace("%inout%", Questions[QuestNumber])
         document.getElementById("All_Questions").innerHTML = Input;
@@ -113,20 +109,19 @@ function TheChoice() {
     let OUI = document.getElementById("OUI");
     let NON = document.getElementById("NON");
     if (QuestNumber == 1) {
-        InputS = parseInt(document.getElementById("Age").value);
-        Answers.Other["Answer_" + QuestNumber] = InputS;
-    }
-    if (QuestNumber == 1 ){ 
         document.getElementById("ShowBtn").style.display = "block";
         let Inputo = parseInt(document.getElementById("Age").value);
-        if (Inputo < 15){
+        if (Inputo < 15) {
             TheUiResult("Prenez contact avec votre médecin généraliste au moindre doute. Cette application n’est pour l’instant pas adaptée aux personnes de moins de 15 ans. En cas d’urgence, appeler le 15. ");
-        }else{
+        } else {
             let Input = theQuestions.Question_1.replace("%inout%", Questions[2])
             document.getElementById("All_Questions").innerHTML = Input;
         }
     }
-   if (QuestNumber == 3) {
+    if (QuestNumber == 1) {
+        InputS = parseInt(document.getElementById("Age").value);
+        Answers.Other["Answer_" + QuestNumber] = InputS;
+    } else if (QuestNumber == 3) {
         let InputS = parseInt(document.getElementById("Age").value);
         if (InputS < 35.4) {
             Answers.FactMajeur["Answer_" + QuestNumber] = InputS;
@@ -155,6 +150,7 @@ function TheChoice() {
         let Option_1 = document.getElementById("Option1");
         let Option_2 = document.getElementById("Option2");
         let Option_3 = document.getElementById("Option3");
+        let Option_4 = document.getElementById("Option4");
         if (Option_1.checked || Option_2.checked) {
             Answers.Other["Answer_12"] = "BIEN";
         } else if (Option_3.checked || Option_4.checked) {
@@ -163,60 +159,61 @@ function TheChoice() {
     } else if (QuestNumber == 13 || QuestNumber == 14) {
         let InputS = parseInt(document.getElementById("Age").value);
         Answers.Other["Answer_" + QuestNumber] = InputS;
-    } else if (QuestNumber >= 15) {
+    } else if (QuestNumber >= 15 && QuestNumber < 24) {
         if (OUI.checked) {
             Answers.FactPronistique["Answer_" + QuestNumber] = "OUI";
         } else if (NON.checked) {
             Answers.Other["Answer_" + QuestNumber] = "NON";
         }
     }
-  
 }
-
 function ShowResult() {
     let Fact_P_Num = AnswerS[0].slice();
     let Fact_M_Num = AnswerS[1].slice();
     let Fact_N_Num = AnswerS[2].slice();
+    console.log(Answers)
     if (Answers.Other.Answer_2 == "OUI" || (Answers.Other.Answer_4 == "OUI" && Answers.Other.Answer_6 == "OUI") || (Answers.Other.Answer_4 == "OUI" && Answers.Other.Answer_5 == "OUI") || (Answers.Other.Answer_2 == "OUI" && Answers.Other.Answer_7 == "OUI")) {
-        if (Fact_P_Num.length == 0) {
+        if (Fact_M_Num.length >= 1 && Fact_P_Num.length >= 0) {
+            TheUiResult("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent");
+        } else if (Fact_P_Num.length == 0) {
             if (Fact_M_Num.length == 0 && Fact_N_Num.length == 0 && Answers.Other.Answer_1 < 50) {
-               TheUiResult("nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’apparition de nouveaux symptômes. Vous pourrez aussi utiliser à nouveau l’application pour réévaluer vos symptômes. ")
-            } else if (Fact_M_Num.length == 0 && Fact_N_Num.length >= 0 && (Answers.Other.Answer_1 >= 50 && Answers.Other.Answer_1 <= 69)) {
-               TheUiResult("téléconsultation ou médecin généraliste ou visite à domicile")
+                TheUiResult("nous vous conseillons de rester à votre domicile et de contacter votre médecin en cas d’apparition de nouveaux symptômes. Vous pourrez aussi utiliser à nouveau l’application pour réévaluer vos symptômes. ")
+            } else if ((Fact_M_Num.length == 0 && Fact_N_Num.length >= 1) || (Fact_M_Num.length == 0 && Fact_N_Num.length == 0 && Answers.Other.Answer_1 >= 50 && Answers.Other.Answer_1 <= 69)) {
+                TheUiResult("téléconsultation ou médecin généraliste ou visite à domicile");
             }
-        } else if (Fact_P_Num.length !== 0) {
-            if ((Fact_M_Num.length == 0 && Fact_N_Num.length == 0) || (Fact_M_Num.length == 0 && Fact_N_Num.length == 1)) {
-               TheUiResult("téléconsultation ou médecin généraliste ou visite à domicile")
+        } else if (Fact_P_Num.length > 0) {
+            if (Fact_M_Num.length == 0 && (Fact_N_Num.length == 0 || Fact_N_Num.length == 1)) {
+                TheUiResult("téléconsultation ou médecin généraliste ou visite à domicile");
             } else if (Fact_M_Num.length == 0 && Fact_N_Num.length >= 2) {
-               TheUiResult("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent")
+                TheUiResult("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent")
             }
-        } else if (Fact_M_Num.length !== 0 && Fact_N_Num.length >= 0 && Fact_P_Num.length >= 0) {
-           TheUiResult("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent")
         }
     } else if (Answers.Other.Answer_2 == "OUI" && Answers.Other.Answer_4 == "OUI") {
-        if (Fact_P_Num.length == 0) {
-            if (Fact_M_Num.length == 0 && Fact_N_Num.length >= 0) {
-               TheUiResult(" téléconsultation ou médecin généraliste ou visite à domicile ")
-            }
-        } else if (Fact_P_Num.length >= 1) {
-            if ((Fact_M_Num.length == 0 && Fact_N_Num.length == 0) || (Fact_M_Num.length == 0 && Fact_N_Num.length == 1)) {
-               TheUiResult("téléconsultation ou médecin généraliste ou visite à domicile")
+        if (Fact_M_Num.length >= 1 &&  Fact_P_Num.length >= 0) {
+            TheUiResult("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent")
+        }else if(Fact_P_Num.length == 0 && Fact_M_Num.length == 0 && Fact_N_Num.length >= 0) {
+                TheUiResult(" téléconsultation ou médecin généraliste ou visite à domicile ")
+        }else if (Fact_P_Num.length >= 1) {
+            if (Fact_M_Num.length == 0  && (Fact_N_Num.length == 0 || Fact_N_Num.length == 1)) {
+                TheUiResult("téléconsultation ou médecin généraliste ou visite à domicile")
             } else if (Fact_M_Num.length == 0 && Fact_N_Num.length >= 2) {
-               TheUiResult("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent")
+                TheUiResult("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent")
             }
-        } else if (Fact_M_Num.length >= 0 && Fact_N_Num.length >= 0 && Fact_P_Num.length >= 0) {
-           TheUiResult("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent")
         }
     } else if (Answers.Other.Answer_2 == "OUI" || Answers.Other.Answer_4 == "OUI" || Answers.Other.Answer_6 == "OUI" || Answers.Other.Answer_7 == "OUI") {
-        if (Fact_M_Num.length == 0 && Fact_N_Num.length == 0 && Fact_P_Num.length >= 0) {
-           TheUiResult("Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute. ")
-        } else if (Fact_P_Num.length >= 0 || Fact_M_Num.length >= 0 || Fact_N_Num.length >= 0) {
-           TheUiResult(" Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141. ")
+        if (Fact_M_Num.length == 0 && Fact_N_Num.length == 0 ) {
+            TheUiResult("Votre situation ne relève probablement pas du Covid-19. Consultez votre médecin au moindre doute.")
+        } else if (Fact_P_Num.length > 0 || Fact_M_Num.length > 0 || Fact_N_Num.length > 0) {
+            TheUiResult(" Votre situation ne relève probablement pas du Covid-19. Un avis médical est recommandé. Au moindre doute, appelez le 141. ")
         }
-    } else if (Answers.Other.Answer_2 == "NON" && Answers.Other.Answer_4 == "NON" && Answers.Other.Answer_5 == "NON" && Answers.Other.Answer_6 == "NON" && Answers.Other.Answer_7 == "NON" && Answers.Other.Answer_8 == "NON" && Answers.Other.Answer_10 == "NON" && Answers.Other.Answer_11 == "NON") {
-       TheUiResult("Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la   situation.   Pour   toute information concernant   le   Covid-19 allez vers la page d’accueil.")
+    } else {
+        TheUiResult("Votre situation ne relève probablement pas du Covid-19. N’hésitez pas à contacter votre médecin en cas de doute. Vous pouvez refaire le test en cas de nouveau symptôme pour réévaluer la   situation.   Pour   toute information concernant   le   Covid-19 allez vers la page d’accueil.")
     }
 }
+
+
+
+
 
 ToNext.addEventListener("click", function () {
     TheChoice();
@@ -228,14 +225,23 @@ ToNext.addEventListener("click", function () {
         }
         ShowResult();
     }
+    if (QuestNumber == 24){
+        let Input = theQuestions.Question_1.replace("%inout%", Questions[0])
+        document.getElementById("All_Questions").innerHTML = Input;
+        document.getElementById("line").style.width = "0"
+        QuestNumber -= 24  ;
+    }
     QuestNumber++;
-    
     document.getElementById("Counter").innerHTML = QuestNumber;
 });
 
 
 
-// ToBack.addEventListener("click", function () {
-//     // UiControlers();
-//     // QuestNumber--;
-// })
+ToBack.addEventListener("click", function () {
+    QuestNumber -= 2;
+    let TheUI = theQuestions.Question_2.replace('%TheQuestion%', Questions[QuestNumber]);
+    document.getElementById("All_Questions").innerHTML = TheUI;
+    document.getElementById("Counter").innerHTML = QuestNumber;
+   
+    
+})
