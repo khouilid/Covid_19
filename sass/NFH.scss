@@ -3,6 +3,9 @@ body {
     padding: 0;
     font-family: 'Cairo', sans-serif;
 }
+button:focus{
+    outline: none;
+}
 nav {
     .container {
         background-image: url("../Assets/png/Merged\ bar-2.png");
