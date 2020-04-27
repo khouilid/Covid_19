@@ -4,6 +4,9 @@ body {
   padding: 0;
   font-family: 'Cairo', sans-serif; }
 
+button:focus {
+  outline: none; }
+
 nav .container {
   background-image: url("../Assets/png/Merged bar-2.png");
   position: fixed;
@@ -307,7 +310,7 @@ section .last {
   section .last p {
     font-size: large; }
 
-section .information {
+section .information1 {
   display: flex;
   padding: 20px;
   justify-content: space-between;
@@ -316,38 +319,38 @@ section .information {
   background-color: #96C5DC;
   margin-top: 50px; }
   @media only screen and (max-width: 800px) {
-    section .information {
+    section .information1 {
       flex-direction: column;
       justify-content: center; } }
-  section .information .information_1 {
+  section .information1 .information_1 {
     width: 35%;
     text-align: center; }
     @media only screen and (max-width: 800px) {
-      section .information .information_1 {
+      section .information1 .information_1 {
         width: 67%; } }
-    section .information .information_1 h1 {
+    section .information1 .information_1 h1 {
       font-size: 30px;
       color: #0f6894; }
-    section .information .information_1 h3 {
+    section .information1 .information_1 h3 {
       color: #0f6894; }
-  section .information .information_2 {
+  section .information1 .information_2 {
     width: 29%;
     text-align: center; }
     @media only screen and (max-width: 800px) {
-      section .information .information_2 {
+      section .information1 .information_2 {
         margin: 30px auto;
         width: 50%; } }
     @media only screen and (max-width: 545px) {
-      section .information .information_2 {
+      section .information1 .information_2 {
         margin: 30px auto;
         width: 100%; } }
-    section .information .information_2 a {
+    section .information1 .information_2 a {
       text-decoration: none;
       color: white;
       padding: 20px;
       border-radius: 8px;
       background-color: #0f6894; }
-    section .information .information_2 p {
+    section .information1 .information_2 p {
       color: white;
       padding: 20px;
       width: 50%;

@@ -525,7 +525,7 @@ section .info_str button {
   display: flex;
   justify-content: space-evenly;
   margin: auto;
-  padding: 50px; }
+  padding: 40px; }
   @media only screen and (max-width: 550px) {
     .btns {
       justify-content: space-between; } }

@@ -128,10 +128,6 @@ header {
     }
 }
 
-
-
-
-
 .Recommandations {
     // display: flex;
     padding-left: 80px;
@@ -151,7 +147,6 @@ header {
         }
 
     }
-
     .Recommandations_A {
         display: flex;
         justify-content: space-evenly;
@@ -177,7 +172,6 @@ header {
 
         }
     }
-
     .Recommandations_contact {
         display: flex;
         flex-direction: column;
@@ -245,7 +239,6 @@ header {
         }
     }
 }
-
 // section befour footer
 section {
 
@@ -281,14 +274,12 @@ section {
         }
     }
 }
-
 footer {
     .logo {
         margin: auto;
         text-align: center;
         margin-top: 20px;
     }
-
     .footer_info {
         display: flex;
         justify-content: space-evenly;
@@ -299,18 +290,13 @@ footer {
 
         .footer_menu {
             margin-top: -60px;
-
-
             div {
-
                 margin-top: 20px;
                 text-align: center;
 
                 button {
                     @include LG-btn(100px, 40px);
-
                 }
-
                 a {
                     text-decoration: none;
                     font-size: $fontwiegth;

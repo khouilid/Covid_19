@@ -9,8 +9,8 @@ Answers = {
 }
 let AnswerS;
 // thi function show the  UI result 
-function TheUiResult(Reso) {
-    let ParaResult = `<div class="information"><h1 id="tittle">Résultats</h1><p class="information_1" id="the_result_alert">${Reso}</p><div class="information_line"></div><p id="ParaForAll">  Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez votre température deux fois par jour. Rappel des mesures d’hygiène.  </p></div>`;
+function TheUiResult(R) {
+    let ParaResult = `<div class="information"><h1 id="tittle">Résultats</h1><p class="information_1" id="the_result_alert">${R}</p><div class="information_line"></div><p id="ParaForAll">  Restez chez vous au maximum en attendant que les symptômes disparaissent. Prenez votre température deux fois par jour. Rappel des mesures d’hygiène.  </p></div>`;
     document.getElementById("All_Questions").innerHTML = ParaResult;
     document.getElementById("time_line").style.display = "none";
     document.getElementById("point_2").style.backgroundColor = "white";
@@ -88,7 +88,7 @@ function UiControlers() {
         Question_1(Questions[QuestNumber]);
         document.getElementById("notification").style.display = "none"
     } else if (QuestNumber == 2 && NON.checked) {
-        Question_2(Questions[Questions + 1])
+        Question_2(Questions[3])
         QuestNumber++;
     }
     if (QuestNumber == 8 && OUI.checked) {
@@ -116,8 +116,9 @@ function TheChoice() {
         let Inputo = parseInt(document.getElementById("Age").value);
         if (Inputo < 15) {
             TheUiResult("Prenez contact avec votre médecin généraliste au moindre doute. Cette application n’est pour l’instant pas adaptée aux personnes de moins de 15 ans. En cas d’urgence, appeler le 15. ");
-        } else {
-            Question_1(Questions[2])
+            QuestNumber = 23;
+        } else if (Inputo >= 15){
+            Question_1(Questions[2]);
         }
     }
     if (QuestNumber == 1) {
@@ -161,7 +162,7 @@ function TheChoice() {
     } else if (QuestNumber == 13 || QuestNumber == 14) {
         let InputS = parseInt(document.getElementById("Age").value);
         Answers.Other["Answer_" + QuestNumber] = InputS;
-    } else if (QuestNumber >= 15 && QuestNumber < 24) {
+    } else if (QuestNumber >= 15 && (QuestNumber == 23 &&  Answers.Other.Answer_1 >= 15) && QuestNumber < 24) {
         if (OUI.checked) {
             Answers.FactPronistique["Answer_" + QuestNumber] = "OUI";
         } else if (NON.checked) {
@@ -174,7 +175,6 @@ function ShowResult() {
     let Fact_P_Num = AnswerS[0].slice();
     let Fact_M_Num = AnswerS[1].slice();
     let Fact_N_Num = AnswerS[2].slice();
-    console.log(Answers)
     if (Answers.Other.Answer_2 == "OUI" || (Answers.Other.Answer_4 == "OUI" && Answers.Other.Answer_6 == "OUI") || (Answers.Other.Answer_4 == "OUI" && Answers.Other.Answer_5 == "OUI") || (Answers.Other.Answer_2 == "OUI" && Answers.Other.Answer_7 == "OUI")) {
         if (Fact_M_Num.length >= 1 && Fact_P_Num.length >= 0) {
             TheUiResult("appelez le 141 si une gêne respiratoire ou des difficultés importantes pour s’alimenter ou boire pendant plus de 24h apparaissent");
@@ -232,10 +232,8 @@ ToNext.addEventListener("click", () => {
     QuestNumber++;
     document.getElementById("Counter").innerHTML = QuestNumber;
 });
-
 ToBack.addEventListener("click", () => {
-    QuestNumber--
-    let TheUI = theQuestions.Question_2.replace('%TheQuestion%', Questions[QuestNumber]);
-    document.getElementById("All_Questions").innerHTML = TheUI;
+    QuestNumber--;
+    Question_2(Questions[QuestNumber])
     document.getElementById("Counter").innerHTML = QuestNumber;
 })
